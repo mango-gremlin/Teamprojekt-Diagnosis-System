@@ -10,3 +10,6 @@ Development of a supportive diagnosis System with a GUI using machine learning.
 | Mara Cockburn | ML | 5471236 |
 
 Betreuer: Wolfgang Fuhl
+
+## Trello: 
+https://trello.com/b/r5shBZAH/teamprojekt
