@@ -1,5 +1,6 @@
 ## Plan
 
+0. General UML Structure
 1. Format Data
 2. Run code with new data
 3. how to make model more accurate
@@ -36,6 +37,9 @@ https://de.mathworks.com/help/stats/improving-classification-trees-and-regressio
 
 - feed data to trees 
 
+- [ ] HOW TO PREVENT OVERFITTING
+
 ## Interface to GUI
 
 - [ ] how to give output over to GUI
+- [ ] beforehand: write test method that simulates input so we can test model accuracy with arbitary data
