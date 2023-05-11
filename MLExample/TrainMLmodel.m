@@ -2,14 +2,16 @@ function TrainMLmodel()
 
 
 
-    load('dataset.mat'); %Load our dataset with diseas and symptoms
+    load('dataset.mat'); %Load our dataset with disease and symptoms
 
-    rng(1); % Since TreeBagger and the cvpartition function needs some random values, we set the random generator initialization to 1 so 
+    rng(1); % Since TreeBagger and the cvpartition function needs some random values, 
+    % we set the random generator initialization to 1 so 
     %when you start the script, you will get the same results as I do.
 
     %Split the data to training and testing data
     SplitSize = 0.20;  %Gives you a 80% training data and 20% testing data split
-    cv = cvpartition(size(diseases,1),'HoldOut',SplitSize); % This computes random indexes for the train and test set based on our amount of entries
+    cv = cvpartition(size(diseases,1),'HoldOut',SplitSize); 
+    % This computes random indexes for the train and test set based on our amount of entries
 
     FeaturesTrain = symptoms(cv.training,:); % Select the training data from the symptoms table as our features
     TargetTrain = diseases(cv.training,:); % Select the training data from the diseases table as our target
@@ -20,13 +22,18 @@ function TrainMLmodel()
 
 %     MLmodel = fitcnet(FeaturesTrain,TargetTrain,'LayerSizes',20); % Train neural network
 
-    [TargetTestPredicted TargetTestScore] = predict(MLmodel,FeaturesTest); % Use our trained model on the test set features
+    [TargetTestPredicted TargetTestScore] = predict(MLmodel,FeaturesTest); 
+    % Use our trained model on the test set features
 %     TargetTestScore; %This is the probability of the class based on the model
     
 
-    CnfusionMatrix = confusionmat(TargetTest,TargetTestPredicted);%Compute the confusion matrix (What have we done right and what have we done wrong)
-    confusionchart(CnfusionMatrix,unique(TargetTest),'RowSummary','row-normalized'); %Show the confusion matrix with class labels
-%     confusionchart(CnfusionMatrix,'RowSummary','row-normalized'); %Show the confusion matrix without class labels
+    CnfusionMatrix = confusionmat(TargetTest,TargetTestPredicted);
+    %Compute the confusion matrix (What have we done right and what have we done wrong)
+
+    confusionchart(CnfusionMatrix,unique(TargetTest),'RowSummary','row-normalized'); 
+    %Show the confusion matrix with class labels
+%     confusionchart(CnfusionMatrix,'RowSummary','row-normalized'); 
+%Show the confusion matrix without class labels
     %The confusion matrix has 41x41 values.
     % You can check the sizes with:
     %    size(TargetTest) should give you 984  1
@@ -49,11 +56,13 @@ function TrainMLmodel()
 
     end
 
-    our_accuracy=our_accuracy/double(size(TargetTest,1)); % Here we divide our "What was correct" with "Dataset size", the result is the accuracy
+    our_accuracy=our_accuracy/double(size(TargetTest,1)); 
+    % Here we divide our "What was correct" with "Dataset size", the result is the accuracy
 
     our_accuracy % Show the result in the console
 
-    save('ourmodel.mat','MLmodel','unique_symptoms');  %Here we save our model for the GUI application as well as the unique symptoms
+    save('ourmodel.mat','MLmodel','unique_symptoms');  
+    %Here we save our model for the GUI application as well as the unique symptoms
 
 end
 
