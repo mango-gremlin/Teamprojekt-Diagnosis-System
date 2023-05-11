@@ -56,12 +56,8 @@ function ParserDiabetes()
 
     % now we need the amount of data (rows) from the original dataset
     symptoms=zeros(size(diabetesBool, 1), size(all_data, 1));
-
-
-    current_file=fopen("Datasets\Diabetes\diabetes-dataset.csv");
-    % open file again to reset pointer to start of file
-
     
+
 
 
 
