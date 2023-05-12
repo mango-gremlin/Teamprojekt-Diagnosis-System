@@ -13,10 +13,12 @@
 
 - reads dataset, opens as csv
 - format:
-  - General: transform symptom/not symptom -> 0 and 1
-  - [ ] Heart Disease: how to transform
-  - [ ] Diabetes: how to transform
-  - [ ] Lumpy Skin: how to transform
+  - [ ] Heart Disease: 
+  	- [ ] combine heart und heart disease 
+  	- [ ] heart health indicators
+  - [ ] Diabetes:
+  	- [ ] combine the two datasets for diabetes
+  - [ ] Lumpy Skin: should we use this
 
 ## Bagged Tree Forest
 
