@@ -1,0 +1,3 @@
+https://www.kaggle.com/datasets/vikasukani/diabetes-data-set
+
+https://www.kaggle.com/datasets/jillanisofttech/diabetes-disease-updated-dataset

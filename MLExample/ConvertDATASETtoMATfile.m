@@ -1,14 +1,17 @@
 function ConvertDATASETtoMATfile()
 
 
-    diseases={}; %Cell array for the diseases since we have strings here; with [] you init a normal array with numerical values
-    diseases_index1=0;  %For the target class, the diseas here, we only need a one dimensional array since every entry will have only one diseas
+    diseases={}; %Cell array for the diseases since we have strings here; 
+                 % with [] you init a normal array with numerical values
+    diseases_index1=0;  %For the target class, the diseas here, 
+    % we only need a one dimensional array since every entry will have only one diseas
 
     symptoms=[]; %Here we will use a numerical array and assigne a 1 to the symptoms the patient has and otherwiese zero
     symptoms_index1=0;
 
 
-    all_symptoms={}; %Cell array for the symptoms since we need to store the text first so we can create the symptoms table in a second step
+    all_symptoms={}; %Cell array for the symptoms since we need to store 
+    % the text first so we can create the symptoms table in a second step
     all_symptoms_index1=0;  % Since each symptom
 
 
@@ -32,12 +35,14 @@ function ConvertDATASETtoMATfile()
         % will be generated, those values will be ignored from the strsplit function
 
         diseases_index1=diseases_index1+1; %increase index
-        diseases{diseases_index1,1}=deblank(current_data{1,1}); %Remove trailing whitespace and null characters (deblank). Add the string to the table
+        diseases{diseases_index1,1}=deblank(current_data{1,1}); 
+        %Remove trailing whitespace and null characters (deblank). Add the string to the table
 
         for i=2:size(current_data,2)
             if ~isempty(deblank(current_data{1,i}))
                 all_symptoms_index1=all_symptoms_index1+1; %increase index
-                all_symptoms{all_symptoms_index1,1}=deblank(current_data{1,i}); %Remove trailing whitespace and null characters (deblank). Add the string to the table
+                all_symptoms{all_symptoms_index1,1}=deblank(current_data{1,i}); 
+                %Remove trailing whitespace and null characters (deblank). Add the string to the table
             end
         end
 
@@ -82,14 +87,18 @@ function ConvertDATASETtoMATfile()
         % If there is a ',,', ',,,' or more ',' in succession no new index in current_data
         % will be generated, those values will be ignored from the strsplit function
 
-        symptoms_index1=symptoms_index1+1; %for each line in the file (each entry) we increase the table index for our symptoms
+        symptoms_index1=symptoms_index1+1; %for each line in the file (each entry) 
+        %                                  we increase the table index for our symptoms
 
         for i=2:size(current_data,2)
 
-            feature_index = find(strcmp(unique_symptoms,current_data{1,i})); % Since we have a cell array with strings, and we want to compare the strings to get our feature index we use the strcmp (String Compare) function.
+            feature_index = find(strcmp(unique_symptoms,current_data{1,i})); 
+            % Since we have a cell array with strings, and we want to compare 
+            % the strings to get our feature index we use the strcmp (String Compare) function.
             % For numerical values you could use all_symptoms==current_data(1,i)
 
-            symptoms(symptoms_index1,feature_index)=1; % Based on the feature index, we set the feature (Symptom) to 1 since we preallocated the array with 0.
+            symptoms(symptoms_index1,feature_index)=1; % Based on the feature index, 
+            % we set the feature (Symptom) to 1 since we preallocated the array with 0.
 
         end
 
@@ -101,7 +110,9 @@ function ConvertDATASETtoMATfile()
     size(diseases) % Size of our target array 4920 entries and one label (The diseas).
     size(symptoms) % Size of our feature array 4920 entries and 132 features (The symptoms).
 
-    save('dataset.mat','diseases','symptoms','unique_symptoms'); %Here we save our tables with the diseas, our target class, and the symptoms. Additionally we save the unique features, which we will need in our GUI example.
+    save('dataset.mat','diseases','symptoms','unique_symptoms'); 
+    %Here we save our tables with the diseas, our target class, and the symptoms. 
+    % Additionally we save the unique features, which we will need in our GUI example.
 
 
 end
