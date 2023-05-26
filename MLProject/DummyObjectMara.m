@@ -1,6 +1,7 @@
 classdef DummyObjectMara
     %DUMMYOBJECTMARA Summary of this class goes here
     %   Detailed explanation goes here
+    % es wurde nur ein kommentar geadded
     
     properties
         Property1
