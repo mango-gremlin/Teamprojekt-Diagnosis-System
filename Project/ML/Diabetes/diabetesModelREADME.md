@@ -1,5 +1,5 @@
 ### README diabetesBaggedTreeModel
-This file contains information about the diabetes model "diabetesBaggedTreeModel.mat"):  [model](diabetesBaggedTreeModel.ml)
+This file contains information about the diabetes model "diabetesBaggedTreeModel.mat"):  [model](diabetesBaggedTreeModel.mat)
 
 ### Usage
 Use the model by calling the predict() func of the model. <br>
