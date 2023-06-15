@@ -16,10 +16,16 @@ classdef DiabetesCommunicator
         function outputArg = returnPrediction(input)
             %METHOD1 Summary of this method goes here
             %   Detailed explanation goes here
-            model = load(["Project" filesep "ML" filesep "Diabetes" filesep "diabetesBaggedTreeModel.mat"]);
+            load(['Project' filesep 'ML' filesep 'Diabetes' filesep 'diabetesBaggedTreeModel.mat']);
+            model = diabetesBaggedTreeModel;
             prediction = model.predictFcn(input);
+            
+            if prediction(1) == 1
+                outputArg = "diabetes"
+            else
+                outputArg = "no diabetes"
+            end
 
-            outputArg = prediction(1);
         end
     end
 end
