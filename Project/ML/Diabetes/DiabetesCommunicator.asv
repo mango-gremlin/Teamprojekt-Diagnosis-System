@@ -6,7 +6,7 @@ classdef DiabetesCommunicator
     %   returns predicted value
     
     properties
-        model = load("Project/ML/Diabetes/diabetesBaggedTreeModel.mat");
+        model = load(["Project" filesep "ML" filesep "Diabetes" filesep "diabetesBaggedTreeModel.mat"]);
         input;
     end
     

@@ -4,10 +4,7 @@ classdef DiabetesCommunicator
     %   loads diabetes model
     %   predicts with model
     %   returns predicted value
-    
-    properties
-        model = load("Project/ML/Diabetes/diabetesBaggedTreeModel.mat");
-    end
+
     
     methods(Static)
         %function obj = DiabetesCommunicator(input)
@@ -19,7 +16,8 @@ classdef DiabetesCommunicator
         function outputArg = returnPrediction(input)
             %METHOD1 Summary of this method goes here
             %   Detailed explanation goes here
-            prediction = obj.model.predictFcn(input);
+            model = load(["Project" filesep "ML" filesep "Diabetes" filesep "diabetesBaggedTreeModel.mat"]);
+            prediction = model.predictFcn(input);
 
             outputArg = prediction(1);
         end
