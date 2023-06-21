@@ -1,4 +1,4 @@
-![[Planning/Project_Structure.png]]
+![Project_structure](https://github.com/mango-gremlin/Teamprojekt-Diagnosis-System/blob/ab4f006f46b35b5ebf5d6607b1171075e213affb/Planning/Project_Structure.png)
 
 # Usage 
 Every GUI has a element communicator, with has one ore more ML-models. It give the unedited input into the communicator by calling the predict function.
