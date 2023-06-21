@@ -1,4 +1,4 @@
-
+![[Planning/Project_Structure.png]]
 
 # Usage 
 Every GUI has a element communicator, with has one ore more ML-models. It give the unedited input into the communicator by calling the predict function.
