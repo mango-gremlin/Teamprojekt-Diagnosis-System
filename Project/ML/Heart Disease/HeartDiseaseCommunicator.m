@@ -17,13 +17,13 @@ classdef HeartDiseaseCommunicator
             model_jointHeart = jointHeartBaggedTreeModel;
             prediction_jointHeart = model_jointHeart.predictFcn(input);
 
-            load(['Project' filesep 'ML' filesep 'Heart Disease' filesep 'tinyHeartBaggedTreeModel.mat']);
-            model_tinyHeart = tinyHeartBaggedTreeModel;
-            prediction_tinyHeart = model_tinyHeart.predictFcn(input);
+            load(['Project' filesep 'ML' filesep 'Heart Disease' filesep 'tidyHeartBaggedTreeModel.mat']);
+            model_tidyHeart = tidyHeartBaggedTreeModel;
+            prediction_tidyHeart = model_tidyHeart.predictFcn(input);
 
             %compare and get the mean 
             
-            if prediction_jointHeart(1) == prediction_tinyHeart(1)
+            if prediction_jointHeart(1) == prediction_tidyHeart(1)
                 if prediction_jointHeart(1) == 1
                     outputArg = "heart disease"
                 else
