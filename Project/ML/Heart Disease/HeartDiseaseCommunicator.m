@@ -38,7 +38,7 @@ classdef HeartDiseaseCommunicator
             isnotempty_tidy = false;
 
             for row = 1:rows_j
-                for col = 1:14
+                for col = 1:13
                     if input_tidy{row,col} ~= 0
                             isnotempty_tidy=true;
                     end
