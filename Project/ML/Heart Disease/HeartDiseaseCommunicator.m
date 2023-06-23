@@ -18,7 +18,7 @@ classdef HeartDiseaseCommunicator
             isnotempty = false;
 
             for row = 1:rows_j
-                for col = 1:14
+                for col = 1:13
                     if input_joint{row,col} ~= 0
                             isnotempty=true;
                     end
@@ -38,7 +38,7 @@ classdef HeartDiseaseCommunicator
             isnotempty_tidy = false;
 
             for row = 1:rows_j
-                for col = 1:13
+                for col = 1:14
                     if input_tidy{row,col} ~= 0
                             isnotempty_tidy=true;
                     end
@@ -63,20 +63,20 @@ classdef HeartDiseaseCommunicator
                 else
                     outputArg = "result inconclusive";
                 end
-            else if isnotempty
+            elseif isnotempty
                     %if there was input only for joint
                     if prediction_jointHeart(1) == 1
                         outputArg = "heart disease";
                     else 
                         outputArg = "no heart disease";
-            end
-            else if isnotempty_tidy
+                    end
+            elseif isnotempty_tidy
                     %if there was input only for tidy
                     if prediction_tidyHeart(1) == 1
                         outputArg = "heart disease";
                     else 
                         outputArg = "no heart disease";
-            end
+                    end
             end
         end
     end
