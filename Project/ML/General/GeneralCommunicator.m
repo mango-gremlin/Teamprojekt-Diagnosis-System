@@ -10,7 +10,7 @@ classdef GeneralCommunicator
             % uses the generalBaggedTreeModel.mat to predict a illness
             load(['Project' filesep 'ML' filesep 'General' filesep 'generalBaggedTreeModel.mat']);
 
-            model = generalBaggedTreeModel;
+            model = generalBaggedModel;
             header = model.RequiredVariables;
             inputTable = array2table(zeros(1, size(header, 2)));
             inputTable.Properties.VariableNames = header;
