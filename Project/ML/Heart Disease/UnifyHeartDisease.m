@@ -34,10 +34,10 @@
 %            - 1
 %            - 2
 %            - 3
-% * thal      ???
-%            - normal
-%            - fixed defect
-%            - reversible defect
+% * thal     thalassemia; blood flow in the heart
+%            - 1: fixed defect (no blood flow in some part of the heart)
+%            - 2: normal blood flow
+%            - 3: reversible defect (a blood flow is observed but it is not normal)
 % * num       target
 %            - 0 (no heart disease)
 %            - stages of heart disease (1,2,3,4)

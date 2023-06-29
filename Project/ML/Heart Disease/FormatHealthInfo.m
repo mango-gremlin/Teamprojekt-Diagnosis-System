@@ -48,19 +48,27 @@ for k = 3:13
             % if this patient has no heart disease, add healthy value to
             % array
             healthyAvg(k-2) = healthyAvg(k-2)+data{row,k};
-            if data{row, k} ~= 0
-                % ignore patients where there is no information for this
-                % symptom/value
-                sumOfHealthyValues(k-2) = sumOfHealthyValues(k-2) + 1;
+            if k == 4 | k == 5 | k == 8 | k == 10
+                if data{row, k} ~= 0
+                    % ignore patients where there is no information for this
+                    % symptom/value and values are not categorical
+                    sumOfHealthyValues(k-2) = sumOfHealthyValues(k-2) + 1;
+                end
+            else
+                    sumOfHealthyValues(k-2)=sumOfHealthyValues(k-2)+1;
             end
-        end
+            
+        end 
     end
-end 
+end
+
 
 % divide sum of all values of all healthy people by the number of values
 for k = 1:11
     healthyAvg(k) = healthyAvg(k) / sumOfHealthyValues(k);
 end
+
+sumOfHealthyValues
 
 healthyAvg = healthyAvg'
 
