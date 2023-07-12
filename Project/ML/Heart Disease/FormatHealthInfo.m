@@ -140,4 +140,8 @@ end
 healthyAvg = healthyAvg'
 
 % make table
-health_info = table(colnames,fullnames,healthyAvg)
+health_info = table(colnames,fullnames,healthyAvg);
+
+writetable(health_info, "heart_averageHealthyValues.csv");
+
+
