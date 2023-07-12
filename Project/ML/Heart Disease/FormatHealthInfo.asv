@@ -19,7 +19,17 @@ colnames = ["cp",
     "oldpeak", 
     "slope", 
     "ca", 
-    "thal"]
+    "thal",
+    "BMI",
+    "Smoker",
+    "Stroke", 
+    "Diabetes",
+    "PhysActivity",
+    "HvyAlcoholConsump",
+    "GenHlth",
+    "MentHlth",
+    "PhysHlth",
+    "DiffWalk"]
 
 % array with full names
 fullnames = ["chest pain type", 
@@ -32,24 +42,34 @@ fullnames = ["chest pain type",
     "ST depression induced by exercise relative to rest",
     "slope of the peak exercise ST segment",
     "number of major vessels colored by fluoroscopy",
-    "thalassemia trait"]
+    "thalassemia trait",
+    "Body Mass Index",
+    "smoked at least 100 cigarettes",
+    "ever had a stroke",
+    "diabetes diagnosis",
+    "physical activity/exercise in the past 30 days",
+    "heavy alcohol consumption",
+    "general health",
+    "mental health",
+    "physical health",
+    "difficulty walking or climbing stairs"]
 
 % array with healthy average values
-data = readtable("ML/Heart Disease/joined_heart_heartdisease.csv");
+dataHeart = readtable(['Project' filesep 'ML' filesep 'Heart Disease' filesep 'joined_heart_heartdisease.csv']);
 
-healthyAvg = zeros(1,11);
-sumOfHealthyValues = zeros(1,11);
+healthyAvg = zeros(1,21);
+sumOfHealthyValues = zeros(1,21);
 
-rows = height(data)
+rows = height(dataHeart)
 
 for k = 3:13
     for row = 1:rows
-        if data{row,"target"} == 0
+        if dataHeart{row,"target"} == 0
             % if this patient has no heart disease, add healthy value to
             % array
-            healthyAvg(k-2) = healthyAvg(k-2)+data{row,k};
+            healthyAvg(k-2) = healthyAvg(k-2)+dataHeart{row,k};
             if k == 4 | k == 5 | k == 8 | k == 10
-                if data{row, k} ~= 0
+                if dataHeart{row, k} ~= 0
                     % ignore patients where there is no information for this
                     % symptom/value and values are not categorical
                     sumOfHealthyValues(k-2) = sumOfHealthyValues(k-2) + 1;
@@ -69,6 +89,54 @@ for k = 1:11
 end
 
 sumOfHealthyValues
+healthyAvg
+
+% load heart disease health indicators dataset and compute average of
+% healthy values
+dataHeartIndicators = readtable(['Project' filesep 'ML' filesep 'Heart Disease' filesep 'tidy_heart_disease_indicators.csv']);
+
+healthyAvg2 = zeros(1,10)
+sumOfHealthyValues2 = zeros(1,10)
+
+%rows2 = height(dataHeartIndicators)
+rows2=1;
+
+for k = 4:13
+    for row = 1:rows2
+        if dataHeartIndicators{row,"HeartDiseaseorAttack"} == 0
+            % if this patient has no heart disease/heart attack, 
+            % add healthy value to array
+            healthyAvg2(k-3) = healthyAvg2(k-3)+dataHeartIndicators{row,k};
+            sumOfHealthyValues2(k-3)=sumOfHealthyValues2(k-3)+1;
+          
+            % if k == 4 | k == 5 | k == 8 | k == 10
+            %     if dataHeartIndicators{row, k} ~= 0
+            %         % ignore patients where there is no information for this
+            %         % symptom/value and values are not categorical
+            %         sumOfHealthyValues(k-2) = sumOfHealthyValues(k-2) + 1;
+            %     end
+            % else
+            %         sumOfHealthyValues(k-2)=sumOfHealthyValues(k-2)+1;
+            % end
+            
+        end 
+    end
+   % tableIndex
+    healthyAvg2
+   % tableIndex = tableIndex+1;
+end
+
+% divide sum by number of values
+for k = 1:10
+    healthyAvg2(k) = healthyAvg2(k) / sumOfHealthyValues2(k);
+end
+
+% put the new values into healthyvalues2
+for k = 12:21
+    healthyAvg(k) = healthyAvg2(k-10);
+end
+
+
 
 healthyAvg = healthyAvg'
 

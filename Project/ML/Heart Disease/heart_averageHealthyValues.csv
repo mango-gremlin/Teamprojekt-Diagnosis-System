@@ -1,0 +1,22 @@
+colnames,fullnames,healthyAvg
+cp,chest pain type,1.06043956043956
+trestbps,resting blood pressure (mm/Hg),132.26404494382
+chol,serum cholesterol (mg/dl),246.537313432836
+fbs,fasting blood sugar > 120 mg/dl,0.138461538461538
+restecg,resting electrocardiographic results,0.497802197802198
+thalach,max heart rate achieved,143.378651685393
+exang,exercise induced angina,0.349450549450549
+oldpeak,ST depression induced by exercise relative to rest,3.34380610412926
+slope,slope of the peak exercise ST segment,1.63736263736264
+ca,number of major vessels colored by fluoroscopy,0.685714285714286
+thal,thalassemia trait,2.67802197802198
+BMI,Body Mass Index,28.26962360795
+Smoker,smoked at least 100 cigarettes,0.424836914185746
+Stroke,ever had a stroke,0.0276560466867142
+Diabetes,diabetes diagnosis,0.256337390714009
+PhysActivity,physical activity/exercise in the past 30 days,0.768624856932725
+HvyAlcoholConsump,heavy alcohol consumption,0.0583496890598685
+GenHlth,general health,2.42236941167255
+MentHlth,mental health,3.03030632716385
+PhysHlth,physical health,3.7312989855823
+DiffWalk,difficulty walking or climbing stairs,0.142566811873605
