@@ -98,7 +98,8 @@ dataHeartIndicators = readtable(['Project' filesep 'ML' filesep 'Heart Disease' 
 healthyAvg2 = zeros(1,10)
 sumOfHealthyValues2 = zeros(1,10)
 
-rows2 = height(dataHeartIndicators)
+%rows2 = height(dataHeartIndicators)
+rows2=1;
 
 for k = 4:13
     for row = 1:rows2
@@ -132,7 +133,7 @@ end
 
 % put the new values into healthyvalues2
 for k = 12:21
-    healthyAvg(k) = healthyAvg2(k-11);
+    healthyAvg(k) = healthyAvg2(k-10);
 end
 
 
