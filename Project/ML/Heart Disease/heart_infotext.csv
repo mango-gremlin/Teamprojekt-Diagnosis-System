@@ -1,0 +1,60 @@
+colnames,fullnames,meaning,interpretation,change,sources
+"age","age of person in years","age of person in years","The older. the higher the risk for heart disease. If you lead a healthier lifestyle - eat healthier, do exercise, avoid excessive drug use - , you can lower the risk of heart disease at a higher age.","","https://www.who.int/news-room/fact-sheets/detail/cardiovascular-diseases-(cvds)"
+"sex","sex of person (male/female)","sex of person (male/female)","Men have a greater risk to suffer from heart attacks than women, and a greater risk of having a heart attack at a younger age than women do. Women have a higher risk for heart attack at a later age than men.","","https://memorialhermann.org/services/specialties/heart-and-vascular/healthy-living/education/heart-disease-and-age"
+"cp","chest pain type","Angina is pain that comes from reduced blood flow to the heart, can be a sign of heart disease. Can be in different places, not only in chest. Can present in the lead-up to a heart attack.","Atypical Angina - chest discomfort, more like an indigestion feeling (women have this)
+non-anginal - chest pain that is non-anginal, and that may not be connected to heart disease or heart attack
+typical angina = reduced blood flow to the heart, tightness/heaviness in chest (the type of chest pain men have)
+In the lead-up to a heart attack, men usually have typical angina (chest pain) - women have atypical angina where there is no strong chest pain per se but discomfort, fatigue, shortness of breath. Angina is most common in people 60 years of age or older.","Less tobacco/alcohol, lower blood pressure, lower cholesterol, more exercise, less stress and warmer temperatures.","https://www.harringtonhospital.org/typical-and-atypical-angina-what-to-look-for/
+https://www.bhf.org.uk/informationsupport/conditions/angina
+https://www.mayoclinic.org/diseases-conditions/angina/symptoms-causes/syc-20369373"
+"trestbps","resting blood pressure (mm/Hg)","Pressure of the blood pumping in your veins.
+Top Number: Systolic pressure = pressure in arteries while in a Systole phase (heart beat).
+Bottom Number: Diastolic pressure = pressure in arteries in a Diastole phase (between heart beats)","High Blood Pressure (Hypertension): blood pressure higher than 120/80. It can lead to heart disease or damage to the heart, or angina.
+Low Blood Pressure: blood pressure lower than 120/80. Generally no correlation with heart disease.","Resting blood pressure can be decreased by exercising more and living a more healthy lifestyle, for instance eating healthy and losing weight.","https://utswmed.org/medblog/high-blood-pressure-heart-disease/"
+"chol","serum cholesterol (mg/dl)","Cholesterol is a sterol. It is a component of cell membranes (30% of all membranes = cholesterol), and many other things. It is synthetised by the body and taken in by food. Serum Cholesterol is the level of cholesterol in the blood serum (the part of blood without the blood cells in it).
+There are two different types of cholesterol:
+HDL (high-density Lipoprotein): good. It absorbs cholesterol in blood, this is then carried to liver, where it ends up getting flushed from the body. It can lower the risk for heart disease.
+LDL (low-density Lipoprotein): bad. It is not transported away and builds up plaque on walls of blood vessels, making them narrower.","High serum cholesterol is generally associated with heart disease mortality.
+Healthy levels of blood serum cholesterol:
+total cholesterol: <= 5 mmol/L
+total to HDL ratio: <= 6
+HDL: >= 1 mmol/L (men) and >= 1.2 mmol/L (women)
+LDL: <= 4 mmol/L","If the high cholesterol is caused by lifestyle: it can be caused by eating fatty foods, not enough exercise, smoking or alcohol consumption. Limiting/improving these things can lower serum cholesterol levels.
+If it is caused by an inherited condition: ask your doctor for a prescription of medicine to lower your cholesterol.","https://www.sevencountriesstudy.com/serum-cholesterol-and-coronary-heart-disease/
+https://www.nhs.uk/conditions/high-cholesterol/
+https://www.cdc.gov/cholesterol/ldl_hdl.htmhttps://www.nhs.uk/conditions/high-cholesterol/cholesterol-levels/
+https://en.wikipedia.org/wiki/Cholesterol"
+"fbs","fasting blood sugar > 120 mg/dl","The blood sugar or glucose in the blood while fasting.
+Diabetes leads to more glucose in the blood and is also associated with heart disease & increases risk for heart disease.","Fasting glucose levels above 120 mg/dl increases risk for heart disease. Lower fasting glucose levels do not increase risk, however: too low levels (< 70 mg/dl) can increase risk for stroke.
+This is because abnormal glucose metabolism can lead to plaques building up in the blood vessels, which make them narrower. It can also lead to impaired endothelial function (the membrane that lines heart & blood vessels, the cells are responsibl for controlling vascular relaxation & contraction, blood clotting etc). And it can also lead to thrombosis.","As this is often caused by diabetes, keeping the diabetes under control will lower blood glucose levels.","https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3687304/
+https://www.cedars-sinai.org/programs/heart/clinical/womens-heart/conditions/endothelial-function-testing.html"
+"restecg","resting electrocardiographic results","The electrocardiographic results when resting. An electrocardiograph measures the electrical activity in the heart and can display how regular heart beats are, or if there are any anomalies in the electrical signals it produces.","LV Hypertrophy (showing probable or definite left ventricular hypertrophy by Estes  criteria): thickening of walls of lower left heart chamber (left ventricle - the main chamber that pumps blood into aorta), which leads to increase in blood pressure, which makes it harder for the heart to pump blood. Caused by high blood pressure, intense physical activity. Can lead to heart attack or heart failure, and arrhythmia.
+STT Abnormality (having ST-T wave abnormality = T wave inversions and/or ST elevation or depression of > 0.05 mV): This is a little more frequent in women than in men. There may be a risk for heart disease if you have stt abnormalities with no apparent heart disease, and it could be used as an early marker. If this is the case for you, maybe get it checked out.","LV Hypertrophy can be managed by medication if it is caused by high blood pressure, or by surgery, depending on the cause.
+You can prevent it altogether by eating healthy, exercising, avoiding stress and avoiding smoking.","https://www.mayoclinic.org/diseases-conditions/left-ventricular-hypertrophy/symptoms-causes/syc-20374314
+https://www.mayoclinic.org/diseases-conditions/left-ventricular-hypertrophy/diagnosis-treatment/drc-20374319
+https://my.clevelandclinic.org/health/diseases/21883-left-ventricular-hypertrophy
+https://www.sciencedirect.com/science/article/pii/S1880427611800451"
+"thalach","max heart rate achieved","The maximum heart rate that can be achieved during intensive physical activity.","The typical maximim heart rate depends on your age. To calculate it, subtract your age from 220.
+For moderate-insentity physical activity, the healthy heart rate should be between 64% and 76% of your max heart rate.
+A high max heart rate can indicate high risk for heart disease & cardiovascular mortality. A low max heart rate can also be an indicator of some underlying condition.","Max heart rate can be changed by exercising to come closer to healthy levels.","https://www.cdc.gov/physicalactivity/basics/measuring/heartrate.htm
+https://pubmed.ncbi.nlm.nih.gov/8574463/"
+"exang","exercise induced angina","If a person has Angina (see above), it is usually induced by exercise/exertion because then the heart needs to pump more blood / body needs more oxygen.","(see angina)","see angina","https://www.mayoclinic.org/diseases-conditions/angina/symptoms-causes/syc-20369373"
+"oldpeak","ST depression induced by exercise relative to rest","The ST refers to the ST segment on an ECG plot. When exercising, the ST segment of a ECG can change relative to the ST segment during rest, which can be an indicator for heart disease.","An abnormal ST depression is characterised by an upsloping, horizontal or downsloping depression. The duration is also important. For more info see slope.","Can be improved by exercise, or heart disease medication.","https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4958709/"
+"slope","slope of the peak exercise ST segment","slope of the peak exercise ST segment (see above)","Downsloping: if this happens at a lower heart rate, it can indicate a worse prognosis and a higher likelihood of heart disease.
+Upsloping is usually seen as an equivocal result to downsloping.","Excercise and heart disease medication.","https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4958709/"
+"ca","number of major vessels colored by fluoroscopy","A catheter is inserted into an artery of the heart, then a fluorescent dye is inserted through the catheter, which is used to colour major vessels. This can then be seen with an X-Ray.
+The number of vessels coloured by the dye can give information on the quality of blood flow.","The more major blood vessels coloured by fluoroscopy, the better the blood flow, the lower the risk for heart disease. If the number of coloured vessels is low, your blood flow may be impaired, which can increase risk for heart disease and heart attacks.","","https://www.cdc.gov/nceh/radiation/fluoroscopy.html"
+"thal","thalassemia trait","Thalassemia is an inherited disease that makes body not produce enough hemoglobin, which leads to less oxygen in red blood cells","Fixed Defect (ischemia) - no blood flow in part of the heart.
+Reversible defect - a blood flow is observed but it is not normal.
+Abnormal or reduced blood flow in parts of the heart or the entire heart can increase risk of heart disease and heart attacks.","","https://en.wikipedia.org/wiki/Thalassemia"
+"BMI","Body Mass Index","Body Mass Index","Body Mass Index","Body Mass Index","Body Mass Index"
+"Smoker","smoked at least 100 cigarettes","smoked at least 100 cigarettes","smoked at least 100 cigarettes","smoked at least 100 cigarettes","smoked at least 100 cigarettes"
+"Stroke","ever had a stroke","ever had a stroke","ever had a stroke","ever had a stroke","ever had a stroke"
+"Diabetes","diabetes diagnosis","diabetes diagnosis","diabetes diagnosis","diabetes diagnosis","diabetes diagnosis"
+"PhysActivity","physical activity/exercise in the past 30 days","physical activity/exercise in the past 30 days","physical activity/exercise in the past 30 days","physical activity/exercise in the past 30 days","physical activity/exercise in the past 30 days"
+"HvyAlcoholConsump","heavy alcohol consumption","heavy alcohol consumption","heavy alcohol consumption","heavy alcohol consumption","heavy alcohol consumption"
+"GenHlth","general health","general health","general health","general health","general health"
+"MentHlth","mental health","mental health","mental health","mental health","mental health"
+"PhysHlth","physical health","physical health","physical health","physical health","physical health"
+"DiffWalk","difficulty walking or climbing stairs","difficulty walking or climbing stairs","difficulty walking or climbing stairs","difficulty walking or climbing stairs","difficulty walking or climbing stairs"
+"target","stage of heart disease","Stage of heart disease information.","stage of heart disease","stage of heart disease","stage of heart disease"

@@ -5,6 +5,8 @@ classdef HeartDiseaseCommunicator
     %   predicts with model
     %   returns predicted value
 
+    %   also returns information on how healthy the input values are
+
     
     methods(Static)
         
@@ -79,6 +81,48 @@ classdef HeartDiseaseCommunicator
                     end
             end
         end
+
+
+        function outputArg = returnInfo(input_joint, input_tidy)
+            % RETURNINFO checks for each input value whether is is healthy
+            % and save info on what values are unhealthy & how to change
+            % them in an output table
+
+            % read in table of healthy values
+            healthyAvg = readtable(['Project' filesep 'ML' filesep 'Heart Disease' filesep 'heart_averageHealthyValues.csv']);
+
+            % read in table of health info text
+            % IMPORTANT: to preserve line breaks, when reading in:
+            opts = detectImportOptions(['Project' filesep 'ML' filesep 'Heart Disease' filesep 'heart_infotext.csv']);
+            healthInfo = readtable(['Project' filesep 'ML' filesep 'Heart Disease' filesep 'heart_infotext.csv'], opts);
+
+            healthInfo
+            healthyAvg
+
+            % check input for joint_heart for unhealthy values
+
+            % loop through input, compare input with respective healthy
+            % value
+            rows = height(healthyAvg);
+
+            cp=[2];
+            test = table(cp);
+
+            test.(1)
+
+            healthyAvg(1, 1)
+
+            for row = 1:rows
+                if(healthyAvg(row, 1) == test.(1))
+                    healthyAvg(row,3)
+                end
+            end 
+
+            % if input not healthy, take this health info and save in
+            % output table
+
+        end 
+
     end
 end
 
