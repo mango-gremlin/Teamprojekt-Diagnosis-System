@@ -10,10 +10,10 @@ classdef LumpySkinCommunicator
         function outputArg = returnPrediction(input)
             % returns value of lumpy skin model
             load(['Project' filesep 'ML' filesep 'Lumpy Skin' filesep 'lumpySkinBaggedTreeModel.mat']);
-            model = lumpySkinBaggedTreeModel;
+            model = lumpySkinBaggedTree;
             prediction = model.predictFcn(input);
                 
-            if prediction == 1
+            if prediction(1) == 1
                 outputArg = "lumpy skin";
             else
                 outputArg = "no lumpy skin";
