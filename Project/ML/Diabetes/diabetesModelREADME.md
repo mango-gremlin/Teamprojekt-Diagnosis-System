@@ -13,5 +13,3 @@ Training method was 10 - cross validation split
 
 ### Accuracy
 The model had a 98.7% training accuracy and a 99.3% test accuracy 
-
-<img width="355" alt="Bildschirm­foto 2023-06-15 um 12 26 10" src="https://github.com/mango-gremlin/Teamprojekt-Diagnosis-System/assets/116288221/764ab291-8894-4daf-aae8-d009792a4022">
