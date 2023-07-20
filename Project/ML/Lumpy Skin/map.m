@@ -8,5 +8,6 @@ function [lat, lon] = map()
     geobasemap(gx,'bluegreen')
 
     [lat, lon] = ginput(1);
+    close
     return
 end
