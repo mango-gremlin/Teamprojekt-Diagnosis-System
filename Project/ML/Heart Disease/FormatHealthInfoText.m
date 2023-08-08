@@ -9,9 +9,7 @@
 % sources:        sources
 
 % array with shortened names
-colnames = ["age",
-    "sex",
-    "cp", 
+colnames = ["cp", 
     "trestbps", 
     "chol", 
     "fbs", 
@@ -32,12 +30,12 @@ colnames = ["age",
     "MentHlth",
     "PhysHlth",
     "DiffWalk",
+    "age",
+    "sex",
     "target"]
 
 % array with full names
-fullnames = ["age of person in years",
-    "sex of person (male/female)",
-    "chest pain type", 
+fullnames = ["chest pain type", 
     "resting blood pressure (mm/Hg)",
     "serum cholesterol (mg/dl)",
     "fasting blood sugar > 120 mg/dl",
@@ -58,12 +56,12 @@ fullnames = ["age of person in years",
     "mental health",
     "physical health",
     "difficulty walking or climbing stairs",
+    "age of person in years",
+    "sex of person (male/female)",
     "stage of heart disease"]
 
 % What does this value mean?
-meaning = ["age of person in years",
-    "sex of person (male/female)",
-    "Angina is pain that comes from reduced blood flow to the heart, can be a sign of heart disease. Can be in different places, not only in chest. Can present in the lead-up to a heart attack.", 
+meaning = ["Angina is pain that comes from reduced blood flow to the heart, can be a sign of heart disease. Can be in different places, not only in chest. Can present in the lead-up to a heart attack.", 
     "Pressure of the blood pumping in your veins." + newline + "Top Number: Systolic pressure = pressure in arteries while in a Systole phase (heart beat)." + newline + "Bottom Number: Diastolic pressure = pressure in arteries in a Diastole phase (between heart beats)",
     "Cholesterol is a sterol. It is a component of cell membranes (30% of all membranes = cholesterol), and many other things. It is synthetised by the body and taken in by food. Serum Cholesterol is the level of cholesterol in the blood serum (the part of blood without the blood cells in it)." + newline + "There are two different types of cholesterol:" + newline + "HDL (high-density Lipoprotein): good. It absorbs cholesterol in blood, this is then carried to liver, where it ends up getting flushed from the body. It can lower the risk for heart disease." + newline + "LDL (low-density Lipoprotein): bad. It is not transported away and builds up plaque on walls of blood vessels, making them narrower.",
     "The blood sugar or glucose in the blood while fasting." + newline + "Diabetes leads to more glucose in the blood and is also associated with heart disease & increases risk for heart disease.",
@@ -84,12 +82,12 @@ meaning = ["age of person in years",
     "mental health",
     "physical health",
     "difficulty walking or climbing stairs",
+    "age of person in years",
+    "sex of person (male/female)",
     "Stage of heart disease information."]
 
 % How to interpret this value?
-interpretation = ["The older. the higher the risk for heart disease. If you lead a healthier lifestyle - eat healthier, do exercise, avoid excessive drug use - , you can lower the risk of heart disease at a higher age.",
-    "Men have a greater risk to suffer from heart attacks than women, and a greater risk of having a heart attack at a younger age than women do. Women have a higher risk for heart attack at a later age than men.",
-    "Atypical Angina - chest discomfort, more like an indigestion feeling (women have this)" + newline + "non-anginal - chest pain that is non-anginal, and that may not be connected to heart disease or heart attack" + newline + "typical angina = reduced blood flow to the heart, tightness/heaviness in chest (the type of chest pain men have)" + newline + "In the lead-up to a heart attack, men usually have typical angina (chest pain) - women have atypical angina where there is no strong chest pain per se but discomfort, fatigue, shortness of breath. Angina is most common in people 60 years of age or older.", 
+interpretation = ["Atypical Angina - chest discomfort, more like an indigestion feeling (women have this)" + newline + "non-anginal - chest pain that is non-anginal, and that may not be connected to heart disease or heart attack" + newline + "typical angina = reduced blood flow to the heart, tightness/heaviness in chest (the type of chest pain men have)" + newline + "In the lead-up to a heart attack, men usually have typical angina (chest pain) - women have atypical angina where there is no strong chest pain per se but discomfort, fatigue, shortness of breath. Angina is most common in people 60 years of age or older.", 
     "High Blood Pressure (Hypertension): blood pressure higher than 120/80. It can lead to heart disease or damage to the heart, or angina." + newline + "Low Blood Pressure: blood pressure lower than 120/80. Generally no correlation with heart disease.",
     "High serum cholesterol is generally associated with heart disease mortality." + newline + "Healthy levels of blood serum cholesterol:" + newline + "total cholesterol: <= 5 mmol/L" + newline + "total to HDL ratio: <= 6" + newline + "HDL: >= 1 mmol/L (men) and >= 1.2 mmol/L (women)" + newline + "LDL: <= 4 mmol/L",
     "Fasting glucose levels above 120 mg/dl increases risk for heart disease. Lower fasting glucose levels do not increase risk, however: too low levels (< 70 mg/dl) can increase risk for stroke." + newline + "This is because abnormal glucose metabolism can lead to plaques building up in the blood vessels, which make them narrower. It can also lead to impaired endothelial function (the membrane that lines heart & blood vessels, the cells are responsibl for controlling vascular relaxation & contraction, blood clotting etc). And it can also lead to thrombosis.",
@@ -110,12 +108,12 @@ interpretation = ["The older. the higher the risk for heart disease. If you lead
     "mental health",
     "physical health",
     "difficulty walking or climbing stairs",
+    "The older. the higher the risk for heart disease. If you lead a healthier lifestyle - eat healthier, do exercise, avoid excessive drug use - , you can lower the risk of heart disease at a higher age.",
+    "Men have a greater risk to suffer from heart attacks than women, and a greater risk of having a heart attack at a younger age than women do. Women have a higher risk for heart attack at a later age than men.",
     "stage of heart disease"]
 
 % how to change the values
-change = ["",
-    "",
-    "Less tobacco/alcohol, lower blood pressure, lower cholesterol, more exercise, less stress and warmer temperatures.", 
+change = ["Less tobacco/alcohol, lower blood pressure, lower cholesterol, more exercise, less stress and warmer temperatures.", 
     "Resting blood pressure can be decreased by exercising more and living a more healthy lifestyle, for instance eating healthy and losing weight.",
     "If the high cholesterol is caused by lifestyle: it can be caused by eating fatty foods, not enough exercise, smoking or alcohol consumption. Limiting/improving these things can lower serum cholesterol levels." + newline + "If it is caused by an inherited condition: ask your doctor for a prescription of medicine to lower your cholesterol.",
     "As this is often caused by diabetes, keeping the diabetes under control will lower blood glucose levels.",
@@ -136,12 +134,12 @@ change = ["",
     "mental health",
     "physical health",
     "difficulty walking or climbing stairs",
+    "age",
+    "sex",
     "stage of heart disease"]
 
 % sources and further reading
-sources = ["https://www.who.int/news-room/fact-sheets/detail/cardiovascular-diseases-(cvds)",
-    "https://memorialhermann.org/services/specialties/heart-and-vascular/healthy-living/education/heart-disease-and-age",
-    "https://www.harringtonhospital.org/typical-and-atypical-angina-what-to-look-for/" + newline + "https://www.bhf.org.uk/informationsupport/conditions/angina" + newline + "https://www.mayoclinic.org/diseases-conditions/angina/symptoms-causes/syc-20369373", 
+sources = ["https://www.harringtonhospital.org/typical-and-atypical-angina-what-to-look-for/" + newline + "https://www.bhf.org.uk/informationsupport/conditions/angina" + newline + "https://www.mayoclinic.org/diseases-conditions/angina/symptoms-causes/syc-20369373", 
     "https://utswmed.org/medblog/high-blood-pressure-heart-disease/",
     "https://www.sevencountriesstudy.com/serum-cholesterol-and-coronary-heart-disease/" + newline + "https://www.nhs.uk/conditions/high-cholesterol/" + newline + "https://www.cdc.gov/cholesterol/ldl_hdl.htm" + "https://www.nhs.uk/conditions/high-cholesterol/cholesterol-levels/" + newline + "https://en.wikipedia.org/wiki/Cholesterol",
     "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3687304/" + newline + "https://www.cedars-sinai.org/programs/heart/clinical/womens-heart/conditions/endothelial-function-testing.html",
@@ -162,10 +160,12 @@ sources = ["https://www.who.int/news-room/fact-sheets/detail/cardiovascular-dise
     "mental health",
     "physical health",
     "difficulty walking or climbing stairs",
+    "https://www.who.int/news-room/fact-sheets/detail/cardiovascular-diseases-(cvds)",
+    "https://memorialhermann.org/services/specialties/heart-and-vascular/healthy-living/education/heart-disease-and-age",
     "stage of heart disease"]
 
 % full table
 infoTexts = table(colnames, fullnames, meaning, interpretation, change, sources)
 
 % save table
-writetable(infoTexts, ['ML' filesep 'Heart Disease' filesep 'heart_infotext.csv'], 'QuoteStrings', true);
+writetable(infoTexts, "heart_infotext.csv", 'QuoteStrings', true);

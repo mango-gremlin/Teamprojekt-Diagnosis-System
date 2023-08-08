@@ -1,6 +1,4 @@
 colnames,fullnames,meaning,interpretation,change,sources
-"age","age of person in years","age of person in years","The older. the higher the risk for heart disease. If you lead a healthier lifestyle - eat healthier, do exercise, avoid excessive drug use - , you can lower the risk of heart disease at a higher age.","","https://www.who.int/news-room/fact-sheets/detail/cardiovascular-diseases-(cvds)"
-"sex","sex of person (male/female)","sex of person (male/female)","Men have a greater risk to suffer from heart attacks than women, and a greater risk of having a heart attack at a younger age than women do. Women have a higher risk for heart attack at a later age than men.","","https://memorialhermann.org/services/specialties/heart-and-vascular/healthy-living/education/heart-disease-and-age"
 "cp","chest pain type","Angina is pain that comes from reduced blood flow to the heart, can be a sign of heart disease. Can be in different places, not only in chest. Can present in the lead-up to a heart attack.","Atypical Angina - chest discomfort, more like an indigestion feeling (women have this)
 non-anginal - chest pain that is non-anginal, and that may not be connected to heart disease or heart attack
 typical angina = reduced blood flow to the heart, tightness/heaviness in chest (the type of chest pain men have)
@@ -57,4 +55,6 @@ Abnormal or reduced blood flow in parts of the heart or the entire heart can inc
 "MentHlth","mental health","mental health","mental health","mental health","mental health"
 "PhysHlth","physical health","physical health","physical health","physical health","physical health"
 "DiffWalk","difficulty walking or climbing stairs","difficulty walking or climbing stairs","difficulty walking or climbing stairs","difficulty walking or climbing stairs","difficulty walking or climbing stairs"
+"age","age of person in years","age of person in years","The older. the higher the risk for heart disease. If you lead a healthier lifestyle - eat healthier, do exercise, avoid excessive drug use - , you can lower the risk of heart disease at a higher age.","age","https://www.who.int/news-room/fact-sheets/detail/cardiovascular-diseases-(cvds)"
+"sex","sex of person (male/female)","sex of person (male/female)","Men have a greater risk to suffer from heart attacks than women, and a greater risk of having a heart attack at a younger age than women do. Women have a higher risk for heart attack at a later age than men.","sex","https://memorialhermann.org/services/specialties/heart-and-vascular/healthy-living/education/heart-disease-and-age"
 "target","stage of heart disease","Stage of heart disease information.","stage of heart disease","stage of heart disease","stage of heart disease"

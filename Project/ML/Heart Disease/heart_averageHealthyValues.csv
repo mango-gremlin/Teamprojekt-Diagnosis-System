@@ -20,3 +20,5 @@ GenHlth,general health,2.42236941167255
 MentHlth,mental health,3.03030632716385
 PhysHlth,physical health,3.7312989855823
 DiffWalk,difficulty walking or climbing stairs,0.142566811873605
+Sex,age in years,0
+Age,sex,0

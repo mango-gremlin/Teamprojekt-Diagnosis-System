@@ -6,7 +6,6 @@ classdef HeartDiseaseCommunicator
     %   returns predicted value
 
     %   also returns information on how healthy the input values are
-
     
     methods(Static)
         
@@ -82,14 +81,9 @@ classdef HeartDiseaseCommunicator
             end
         end
 
-
-        function outputArg = returnInfo(input_joint, input_tidy)
-            % RETURNINFO checks for each input value whether is is healthy
-            % and save info on what values are unhealthy & how to change
-            % them in an output table
-
-            % read in table of healthy values
-            healthyAvg = readtable(['Project' filesep 'ML' filesep 'Heart Disease' filesep 'heart_averageHealthyValues.csv']);
+        function outputArg = returnInfo(input_joint,input_tidy)
+            % RETURNINFO returns which values are
+            % unhealthy and information about these values as strings.
 
             % read in table of health info text
             % IMPORTANT: to preserve line breaks, when reading in:
@@ -97,32 +91,104 @@ classdef HeartDiseaseCommunicator
             healthInfo = readtable(['Project' filesep 'ML' filesep 'Heart Disease' filesep 'heart_infotext.csv'], opts);
 
             healthInfo
+
+            unhealthy = getUnhealthyValues(input_joint, input_tidy)
+
+            % if input not healthy, take this health info and save in
+            % output table
+        end 
+
+        function outputArg = getUnhealthyValues(input_joint, input_tidy)
+            % GETUNHEALTHYVALUES checks for each input value whether is is healthy
+            % and save info on what values are unhealthy & how to change
+            % them in an output table and returns this table
+
+            % read in table of healthy values
+            healthyAvg = readtable(['Project' filesep 'ML' filesep 'Heart Disease' filesep 'heart_averageHealthyValues.csv']);
+
             healthyAvg
 
             % check input for joint_heart for unhealthy values
 
             % loop through input, compare input with respective healthy
             % value
-            rows = height(healthyAvg);
+            inputJointRows = 13;
 
+            age=[1];
+            sex=[1];
             cp=[2];
-            test = table(cp);
+            trestbps=[1];
+            chol=[1];
+            fbs=[1];
+            restecg=[1];
+            thalach=[1];
+            exang=[1];
+            oldpeak=[1];
+            slope=[1];
+            ca=[1];
+            thal=[1];
 
-            test.(1)
+            inputjointtest = table(age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal);
 
-            healthyAvg(1, 1)
+            %test.(1)
 
-            for row = 1:rows
-                if(healthyAvg(row, 1) == test.(1))
-                    healthyAvg(row,3)
-                end
-            end 
+            %healthyAvg(1, 3)
 
-            % if input not healthy, take this health info and save in
-            % output table
+            % create a new table that saves whether values were unhealthy
+            % (TRUE) or healthy (FALSE)
+            % the row numbers reflect those in the healthyAvg and
+            % HealthInfo Tables
+            unhealthyValues = zeros(1,23);
 
+            %ignore age here because age here & in input tidy should be the
+            %same
+            for row = 3:inputJointRows
+                switch row 
+                    % 3: chest pain: 0 means asymptomatic
+                    % 6: fasting blood sugar: 0 means low
+                    % 9: exercise induced angina: 0 means no angina
+                    case {3, 6, 9}
+                        if(inputjointtest.(row) ~= 0)
+                            unhealthyValues(row) = true;
+                        end
+                    % 4: resting blood pressure
+                    % 5: serum cholesterol
+                    % 8: max heart rate
+                    % higher than average = unhealthy
+                    case {4, 5, 8}
+                        if(healthyAvg.healthyAvg(row) <= inputjointtest.(row))
+                            unhealthyValues(row) = true;
+                        end 
+                    % 7: resting electrocardiographic results: 1 is normal
+                    % 11: slope of ST segment: 1 is flat
+                    case {7, 11}
+                        if(inputjointtest.(row) ~= 1)
+                            unhealthyValues(row) = true;
+                        end
+                    % 10: st depression (oldpeak)
+                    % 12: number of vessels coloured (blood flow)
+                    %lower than average = unhealthy
+                    case {10,12}
+                        if(healthyAvg.healthyAvg(row) >= inputjointtest.(row))
+                            unhealthyValues(row) = true;
+                        end 
+                    % 13: thalassemia trait: 2 is normal
+                    case 13
+                        if(inputjointtest.(row) ~= 2)
+                            unhealthyValues(row) = true;
+                        end
+                   end
+               end 
+
+            outputArg = unhealthyValues
         end 
 
     end
 end
 
+%% test input:
+%age = [1]
+        
+%input-joint-test = table(age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal)
+
+%input-tidy-test = table(HighBP, HighChol, BMI, Smoker, Stroke, PhysActivity, HvyAlcoholConsump, GenHlth, MentHlth, PhysHlth, DiffWalk, Sex, Age)
