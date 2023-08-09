@@ -29,7 +29,9 @@ colnames = ["cp",
     "GenHlth",
     "MentHlth",
     "PhysHlth",
-    "DiffWalk"]
+    "DiffWalk",
+    "Sex", 
+    "Age"]
 
 % array with full names
 fullnames = ["chest pain type", 
@@ -52,13 +54,15 @@ fullnames = ["chest pain type",
     "general health",
     "mental health",
     "physical health",
-    "difficulty walking or climbing stairs"]
+    "difficulty walking or climbing stairs",
+    "age in years",
+    "sex"]
 
 % array with healthy average values
 dataHeart = readtable(['Project' filesep 'ML' filesep 'Heart Disease' filesep 'joined_heart_heartdisease.csv']);
 
-healthyAvg = zeros(1,21);
-sumOfHealthyValues = zeros(1,21);
+healthyAvg = zeros(1,23);
+sumOfHealthyValues = zeros(1,23);
 
 rows = height(dataHeart)
 
@@ -95,8 +99,8 @@ healthyAvg
 % healthy values
 dataHeartIndicators = readtable(['Project' filesep 'ML' filesep 'Heart Disease' filesep 'tidy_heart_disease_indicators.csv']);
 
-healthyAvg2 = zeros(1,10)
-sumOfHealthyValues2 = zeros(1,10)
+healthyAvg2 = zeros(1,12)
+sumOfHealthyValues2 = zeros(1,12)
 
 rows2 = height(dataHeartIndicators)
 
@@ -131,7 +135,7 @@ for k = 1:10
 end
 
 % put the new values into healthyvalues2
-for k = 12:21
+for k = 12:23
     healthyAvg(k) = healthyAvg2(k-11);
 end
 
@@ -142,6 +146,6 @@ healthyAvg = healthyAvg'
 % make table
 health_info = table(colnames,fullnames,healthyAvg);
 
-writetable(health_info, "heart_averageHealthyValues.csv");
+writetable(health_info, "heart_averageHealthyValues2.csv")
 
 

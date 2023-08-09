@@ -1,0 +1,171 @@
+% This script generates a table containing health information text for the
+% heart disease table values.
+
+% colnames:       names of values (as in dataset)
+% fullnames:      full names of values
+% meaning:        What does this value mean?
+% interpretation: How to Interpret this value?
+% change:         How to change/decrease risk?
+% sources:        sources
+
+% array with shortened names
+colnames = ["cp", 
+    "trestbps", 
+    "chol", 
+    "fbs", 
+    "restecg", 
+    "thalach", 
+    "exang", 
+    "oldpeak", 
+    "slope", 
+    "ca", 
+    "thal",
+    "BMI",
+    "Smoker",
+    "Stroke", 
+    "Diabetes",
+    "PhysActivity",
+    "HvyAlcoholConsump",
+    "GenHlth",
+    "MentHlth",
+    "PhysHlth",
+    "DiffWalk",
+    "age",
+    "sex",
+    "target"]
+
+% array with full names
+fullnames = ["chest pain type", 
+    "resting blood pressure (mm/Hg)",
+    "serum cholesterol (mg/dl)",
+    "fasting blood sugar > 120 mg/dl",
+    "resting electrocardiographic results",
+    "max heart rate achieved",
+    "exercise induced angina",
+    "ST depression induced by exercise relative to rest",
+    "slope of the peak exercise ST segment",
+    "number of major vessels colored by fluoroscopy",
+    "thalassemia trait",
+    "Body Mass Index",
+    "smoked at least 100 cigarettes",
+    "ever had a stroke",
+    "diabetes diagnosis",
+    "physical activity/exercise in the past 30 days",
+    "heavy alcohol consumption",
+    "general health",
+    "mental health",
+    "physical health",
+    "difficulty walking or climbing stairs",
+    "age of person in years",
+    "sex of person (male/female)",
+    "stage of heart disease"]
+
+% What does this value mean?
+meaning = ["Angina is pain that comes from reduced blood flow to the heart, can be a sign of heart disease. Can be in different places, not only in chest. Can present in the lead-up to a heart attack.", 
+    "Pressure of the blood pumping in your veins." + newline + "Top Number: Systolic pressure = pressure in arteries while in a Systole phase (heart beat)." + newline + "Bottom Number: Diastolic pressure = pressure in arteries in a Diastole phase (between heart beats)",
+    "Cholesterol is a sterol. It is a component of cell membranes (30% of all membranes = cholesterol), and many other things. It is synthetised by the body and taken in by food. Serum Cholesterol is the level of cholesterol in the blood serum (the part of blood without the blood cells in it)." + newline + "There are two different types of cholesterol:" + newline + "HDL (high-density Lipoprotein): good. It absorbs cholesterol in blood, this is then carried to liver, where it ends up getting flushed from the body. It can lower the risk for heart disease." + newline + "LDL (low-density Lipoprotein): bad. It is not transported away and builds up plaque on walls of blood vessels, making them narrower.",
+    "The blood sugar or glucose in the blood while fasting." + newline + "Diabetes leads to more glucose in the blood and is also associated with heart disease & increases risk for heart disease.",
+    "The electrocardiographic results when resting. An electrocardiograph measures the electrical activity in the heart and can display how regular heart beats are, or if there are any anomalies in the electrical signals it produces.",
+    "The maximum heart rate that can be achieved during intensive physical activity.",
+    "If a person has Angina (see above), it is usually induced by exercise/exertion because then the heart needs to pump more blood / body needs more oxygen.",
+    "The ST refers to the ST segment on an ECG plot. When exercising, the ST segment of a ECG can change relative to the ST segment during rest, which can be an indicator for heart disease.",
+    "slope of the peak exercise ST segment (see above)",
+    "A catheter is inserted into an artery of the heart, then a fluorescent dye is inserted through the catheter, which is used to colour major vessels. This can then be seen with an X-Ray." + newline + "The number of vessels coloured by the dye can give information on the quality of blood flow.",
+    "Thalassemia is an inherited disease that makes body not produce enough hemoglobin, which leads to less oxygen in red blood cells",
+    "Body Mass Index, or BMI is calculated by dividing weight in kg by height squared in m: weight/ (height^2)",
+    "Have you smoked at least 100 cigarettes in your entire life? (Note: 5 packs = 100 cigarettes)",
+    "A stroke is a serious life-threatening medical condition that happens when the blood supply to part of the brain is cut off.",
+    "Diabetes is a disease where a person's body has trouble producing insulin, resulting in too much sugar building up in the blood stream.",
+    "Adults who reported doing physical activity or exercise during the past 30 days other than their regular job.",
+    "Alcohol is poisonous to the body and needs to be metabolised by the liver. Heavy alcohol consumption, as with any heavy substance abuse, can have adverse health effects.",
+    "General health can mean anything from physical to mental health.",
+    "Mental health includes stress, depression, and problems with emotions",
+    "Physical health includes physical illness and injury.",
+    "Difficulty walking or climbing stairs.",
+    "age of person in years",
+    "sex of person (male/female)",
+    "Stage of heart disease information."]
+
+% How to interpret this value?
+interpretation = ["Atypical Angina - chest discomfort, more like an indigestion feeling (women have this)" + newline + "non-anginal - chest pain that is non-anginal, and that may not be connected to heart disease or heart attack" + newline + "typical angina = reduced blood flow to the heart, tightness/heaviness in chest (the type of chest pain men have)" + newline + "In the lead-up to a heart attack, men usually have typical angina (chest pain) - women have atypical angina where there is no strong chest pain per se but discomfort, fatigue, shortness of breath. Angina is most common in people 60 years of age or older.", 
+    "High Blood Pressure (Hypertension): blood pressure higher than 120/80. It can lead to heart disease or damage to the heart, or angina." + newline + "Low Blood Pressure: blood pressure lower than 120/80. Generally no correlation with heart disease.",
+    "High serum cholesterol is generally associated with heart disease mortality." + newline + "Healthy levels of blood serum cholesterol:" + newline + "total cholesterol: <= 5 mmol/L" + newline + "total to HDL ratio: <= 6" + newline + "HDL: >= 1 mmol/L (men) and >= 1.2 mmol/L (women)" + newline + "LDL: <= 4 mmol/L",
+    "Fasting glucose levels above 120 mg/dl increases risk for heart disease. Lower fasting glucose levels do not increase risk, however: too low levels (< 70 mg/dl) can increase risk for stroke." + newline + "This is because abnormal glucose metabolism can lead to plaques building up in the blood vessels, which make them narrower. It can also lead to impaired endothelial function (the membrane that lines heart & blood vessels, the cells are responsibl for controlling vascular relaxation & contraction, blood clotting etc). And it can also lead to thrombosis.",
+    "LV Hypertrophy (showing probable or definite left ventricular hypertrophy by Estes  criteria): thickening of walls of lower left heart chamber (left ventricle - the main chamber that pumps blood into aorta), which leads to increase in blood pressure, which makes it harder for the heart to pump blood. Caused by high blood pressure, intense physical activity. Can lead to heart attack or heart failure, and arrhythmia." + newline + "STT Abnormality (having ST-T wave abnormality = T wave inversions and/or ST elevation or depression of > 0.05 mV): This is a little more frequent in women than in men. There may be a risk for heart disease if you have stt abnormalities with no apparent heart disease, and it could be used as an early marker. If this is the case for you, maybe get it checked out.",
+    "The typical maximim heart rate depends on your age. To calculate it, subtract your age from 220." + newline + "For moderate-insentity physical activity, the healthy heart rate should be between 64% and 76% of your max heart rate." + newline + "A high max heart rate can indicate high risk for heart disease & cardiovascular mortality. A low max heart rate can also be an indicator of some underlying condition.",
+    "(see angina)",
+    "An abnormal ST depression is characterised by an upsloping, horizontal or downsloping depression. The duration is also important. For more info see slope.",
+    "Downsloping: if this happens at a lower heart rate, it can indicate a worse prognosis and a higher likelihood of heart disease." + newline + "Upsloping is usually seen as an equivocal result to downsloping.",
+    "The more major blood vessels coloured by fluoroscopy, the better the blood flow, the lower the risk for heart disease. If the number of coloured vessels is low, your blood flow may be impaired, which can increase risk for heart disease and heart attacks.",
+    "Fixed Defect (ischemia) - no blood flow in part of the heart." + newline + "Reversible defect - a blood flow is observed but it is not normal." + newline + "Abnormal or reduced blood flow in parts of the heart or the entire heart can increase risk of heart disease and heart attacks.",
+    "healthy: 18.5 - 25, overweight: 25 - 30, obese: >30, underweight: <18.5" + newline + "In general a higher BMI is linked to a higher risk of developing a range of conditions like diabetes, arthritis, liver disease, cancer, high blood pressure, high cholesterol, sleep apnea." + newline + "Current BMI definitions of overweight or obesity were based largely on white populations. Yet body composition, including percent body fat or amount of muscle mass, can vary by race and ethnic group.",
+    "Smokers are more likely than non-smokers to develop heart disease, stroke and lung cancer. Smokers are at greater risk for diseases that affect the heart and blood vessels (cardiovascular disease).",
+    "If the supply of blood to the brain is restricted or stopped, brain cells begin to die. This can lead to brain injury, disability and possibly death. People who survive a stroke are often left with long-term problems caused by injury to their brain." + newline + "Women and men have a much higher risk of dangerous heart problems soon after their first stroke compared to people without stroke, even if they don't have obvious underlying heart disease, a study has found.",
+    "Having diabetes means you are more likely to develop heart disease. People with diabetes are also more likely to have certain risk factors, such as high blood pressure or high cholesterol, that increase their chances of having a heart attack or a stroke." + newline + "High blood glucose from diabetes can damage your blood vessels and the nerves that control your heart and blood vessels. Over time, this damage can lead to heart disease. People with diabetes tend to develop heart disease at a younger age than people without diabetes. Adults with diabetes are nearly twice as likely to have heart disease or stroke as adults without diabetes.",
+    "Physical activity lowers your risk for many diseases, such as coronary heart disease, diabetes, and cancer. Inactive people are more likely to develop heart disease than people who are physically active. Studies suggest that inactivity is a major risk factor for heart disease, just like high blood pressure, high blood cholesterol, and smoking.",
+    "Heavy drinking, on the other hand, is linked to a number of poor health outcomes, including heart conditions. Excessive alcohol intake can lead to high blood pressure, heart failure or stroke. Excessive drinking can also contribute to cardiomyopathy, a disorder that affects the heart muscle." + newline + "Light-to-moderate drinking (1 to 14 drinks/week) is associated with a significant reduction in progressive heart failure and hospitalization. However, there were no positive effects in subjects with mechanical or electrical dysfunction of heart muscle, or nonischemic heart disease, and although not significant, there was a slight risk for hospitalization for heart failure.",
+    "Poor general health may indicate heart disease as a cause.",
+    "A higher prevalence of mental diseases in CHD (Coronary Heart Disease) patients has been demonstrated. Conversely, people suffering from a mental disease seem to have an increased risk of CHD. Moreover, common pathophysiological mechanisms may link both diseases.",
+    "A low physical health is strongly and significantly associated with the incidence of all major types of coronary heart disease.",
+    "The more risk factors people have for heart disease, the faster their decline in walking speed.",
+    "The older. the higher the risk for heart disease." + newline + "Risk for heart disease and attack increases significantly over the age of 45.",
+    "Men have a greater risk to suffer from heart attacks than women, and a greater risk of having a heart attack at a younger age than women do. Women have a higher risk for heart attack at a later age than men.",
+    "stage of heart disease"]
+
+% how to change the values
+change = ["Less tobacco/alcohol, lower blood pressure, lower cholesterol, more exercise, less stress and warmer temperatures.", 
+    "Resting blood pressure can be decreased by exercising more and living a more healthy lifestyle, for instance eating healthy and losing weight.",
+    "If the high cholesterol is caused by lifestyle: it can be caused by eating fatty foods, not enough exercise, smoking or alcohol consumption. Limiting/improving these things can lower serum cholesterol levels." + newline + "If it is caused by an inherited condition: ask your doctor for a prescription of medicine to lower your cholesterol.",
+    "As this is often caused by diabetes, keeping the diabetes under control will lower blood glucose levels.",
+    "LV Hypertrophy can be managed by medication if it is caused by high blood pressure, or by surgery, depending on the cause." + newline + "You can prevent it altogether by eating healthy, exercising, avoiding stress and avoiding smoking.",
+    "Max heart rate can be changed by exercising to come closer to healthy levels.",
+    "see angina",
+    "Can be improved by exercise, or heart disease medication.",
+    "Excercise and heart disease medication.",
+    "",
+    "",
+    "Losing or gaining weight." + newline + "It is important to keep in mind, that the BMI doesn't differentiate between the weight of fat or the weight of muscles. BMI may be particularly unreliable during pregnancy, for athletes, and the elderly.",
+    "Reduce or quit smoking: Quitting smoking is one of the most important actions people can take to improve their health. This is true regardless of their age or how long they have been smoking.",
+    "You can significantly reduce your risk of having a stroke if you: eat well, take regular exercise, don't drink alcohol, don't smoke." + newline + "If you've had a stroke in the past, these measures are particularly important because your risk of having another stroke is greatly increased.",
+    "The steps you take to manage your diabetes also help lower your chances of having heart disease or stroke:" + newline + "Follow a healthy eating plan, make physical activity part of your routine, star at or get to a healthy weight, get enough sleep and quit smoking.",
+    "Reduce time sitting and increase time moving." + newline + "Make physical activity part of your daily or weekly routine." + newline + "Take up a sport, alone or in a group.",
+    "Reduce the amount of drinks you have in a week to less than 14 for men, 7 for women. (1 drink= 355 ml beer / 118 ml wine / 44 ml spirits)" + newline + "If you have certain heart rhythm abnormalities or heart failure, you should avoid even that much or not drink at all.",
+    "Find out the cause of poor health can help improve it.",
+    "As poor mental health may be connected with poor physical health, improving mental health could lead to better overall health outcomes. Consider talking to a friend or finding a therapist.",
+    "How to improve poor physical health depends on the cause of said physical health.",
+    "As difficulty walking is connected to risk factors for heart disease, treating the underlying causes can improve difficulty walking.",
+    "If you lead a healthier lifestyle - eat healthier, do exercise, avoid excessive drug use - , you can lower the risk of heart disease at a higher age.",
+    "",
+    "stage of heart disease"]
+
+% sources and further reading
+sources = ["https://www.harringtonhospital.org/typical-and-atypical-angina-what-to-look-for/" + newline + "https://www.bhf.org.uk/informationsupport/conditions/angina" + newline + "https://www.mayoclinic.org/diseases-conditions/angina/symptoms-causes/syc-20369373", 
+    "https://utswmed.org/medblog/high-blood-pressure-heart-disease/",
+    "https://www.sevencountriesstudy.com/serum-cholesterol-and-coronary-heart-disease/" + newline + "https://www.nhs.uk/conditions/high-cholesterol/" + newline + "https://www.cdc.gov/cholesterol/ldl_hdl.htm" + "https://www.nhs.uk/conditions/high-cholesterol/cholesterol-levels/" + newline + "https://en.wikipedia.org/wiki/Cholesterol",
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3687304/" + newline + "https://www.cedars-sinai.org/programs/heart/clinical/womens-heart/conditions/endothelial-function-testing.html",
+    "https://www.mayoclinic.org/diseases-conditions/left-ventricular-hypertrophy/symptoms-causes/syc-20374314" + newline + "https://www.mayoclinic.org/diseases-conditions/left-ventricular-hypertrophy/diagnosis-treatment/drc-20374319" + newline + "https://my.clevelandclinic.org/health/diseases/21883-left-ventricular-hypertrophy" + newline + "https://www.sciencedirect.com/science/article/pii/S1880427611800451",
+    "https://www.cdc.gov/physicalactivity/basics/measuring/heartrate.htm" + newline + "https://pubmed.ncbi.nlm.nih.gov/8574463/",
+    "https://www.mayoclinic.org/diseases-conditions/angina/symptoms-causes/syc-20369373",
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4958709/",
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4958709/",
+    "https://www.cdc.gov/nceh/radiation/fluoroscopy.html",
+    "https://en.wikipedia.org/wiki/Thalassemia",
+    "https://www.health.harvard.edu/blog/how-useful-is-the-body-mass-index-bmi-201603309339" + newline + "https://www.nhs.uk/live-well/healthy-weight/bmi-calculator/",
+    "https://www.cdc.gov/tobacco/data_statistics/fact_sheets/health_effects/effects_cig_smoking/index.htm",
+    "https://www.ahajournals.org/doi/full/10.1161/STROKEAHA.119.028066" + newline + "https://www.nhs.uk/conditions/stroke/",
+    "https://www.cdc.gov/chronicdisease/resources/publications/factsheets/heart-disease-stroke.htm" + newline + "https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-problems/heart-disease-stroke",
+    "https://www.nhlbi.nih.gov/health/heart/physical-activity/benefits" + newline + "https://www.cdc.gov/healthyweight/physical_activity/getting_started.html",
+    "https://www.hopkinsmedicine.org/health/wellness-and-prevention/alcohol-and-heart-health-separating-fact-from-fiction" + newline + "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5513687/",
+    "",
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6016051/",
+    "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6041849/",
+    "https://www.medindia.net/news/walking-difficulties-linked-with-heart-disease-risk-factors-174860-1.htm",
+    "https://www.who.int/news-room/fact-sheets/detail/cardiovascular-diseases-(cvds)",
+    "https://memorialhermann.org/services/specialties/heart-and-vascular/healthy-living/education/heart-disease-and-age",
+    "stage of heart disease"]
+
+% full table
+infoTexts = table(colnames, fullnames, meaning, interpretation, change, sources)
+
+% save table
+writetable(infoTexts, "heart_infotext.csv", 'QuoteStrings', true);
