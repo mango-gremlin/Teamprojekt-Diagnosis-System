@@ -21,11 +21,11 @@ classdef GeneralCommunicator
             end
             
             prediction = model.predictFcn(inputTable)
-            string(prediction)
+            char(pr)
             if isequal(prediction, 'healthy')
                 outputArg = [prediction, "stay healthy ;D"];
             else
-                precaution = GeneralCommunicator.getPrecautions(string(prediction))
+                precaution = getPrecautions(char(prediction))
                 outputArg = [prediction, precaution]
             end
         end
