@@ -3,17 +3,17 @@ This file contains information about the model generalBaggedTreeModel.mat
 The data to train the model is safed in generalDataConverted.csv
 
 ### Usage
-Use the model by calling the predict() func of the model.  <\br>
-Model uses a array of size 134 of binary values (0 or 1) as input, representing 134 different symptoms. <\br>
-A 1 represents, that the subject has a certain symptom.  <\br>
+Use the model by calling the predict() func of the model.  <br>
+Model uses a array of size 134 of binary values (0 or 1) as input, representing 134 different symptoms. <br>
+A 1 represents, that the subject has a certain symptom.  <br>
 The symptoms are match the symptoms in the "symptom-severity.csv" file, but are alphabetically ordered (for more info see below)
 
 ### Training
-Data (4922 samples) was splitted in 90% training data, 10% test data. <\br>
+Data (4922 samples) was splitted in 90% training data, 10% test data. <br>
 Training method was 5 - cross validation split
 
 ### Accuracy 
-The models accuracy was 99.9% <\br>
+The models accuracy was 99.9% <br>
 The test data accuracy was 100.0% 
 
 <img width="366" alt="Bildschirm­foto 2023-06-21 um 17 04 33" src="https://github.com/mango-gremlin/Teamprojekt-Diagnosis-System/assets/116288221/0a278a03-6801-4f22-82eb-4eea86d2138a">
