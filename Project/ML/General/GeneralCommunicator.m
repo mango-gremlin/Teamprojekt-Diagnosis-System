@@ -20,25 +20,22 @@ classdef GeneralCommunicator
                 inputTable.(symptom)(1) = 1;
             end
             
-            prediction = model.predictFcn(inputTable)
-            string(prediction)
-            if isequal(prediction, 'healthy')
-                outputArg = [prediction, "stay healthy ;D"];
-            else
-                precaution = GeneralCommunicator.getPrecautions(string(prediction))
-                outputArg = [prediction, precaution]
-            end
+            outputArg = model.predictFcn(inputTable);
         end
 
         function precautions = getPrecautions(illness)
             listOfPrecautions = readtable(['Project' filesep 'ML' filesep 'General' filesep 'symptom_precaution.csv']);
             % find index and extract precautions to an cell array
-            index = find(strcmp(listOfPrecautions.Disease, illness));
-            precautionIllness = listOfPrecautions(index,2:5)
-            precautionArray = [precautionIllness.Precaution_1, precautionIllness.Precaution_2, precautionIllness.Precaution_3, precautionIllness.Precaution_4]
-            % filter the array, so it does not contains empty cells
-            filterCondition = @(x) ~isequal(x, '');            
-            precautions = precautionArray(cellfun(filterCondition, precautionArray))
+            if isequal(string(illness), 'healthy')
+                precautions = ["stay healthy ;D"];
+            else
+                index = find(strcmp(listOfPrecautions.Disease, string(illness)));
+                precautionIllness = listOfPrecautions(index,2:5);
+                precautionArray = [precautionIllness.Precaution_1, precautionIllness.Precaution_2, precautionIllness.Precaution_3, precautionIllness.Precaution_4];
+                % filter the array, so it does not contains empty cells
+                filterCondition = @(x) ~isequal(x, '');            
+                precautions = precautionArray(cellfun(filterCondition, precautionArray));
+            end
         end
     end
 end
