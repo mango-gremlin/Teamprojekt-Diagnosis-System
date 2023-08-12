@@ -19,3 +19,6 @@ And 90.7% on the test set. <br>
 
 
 <img width="351" alt="247603891-4e9af4ae-d38a-4bd6-a888-ce888e251b10" src="https://github.com/mango-gremlin/Teamprojekt-Diagnosis-System/assets/116288221/bda68751-55c2-46af-9fc5-a8a13995573e">
+
+### Order of variables
+[HighBP, HighChol, BMI, Smoker, Stroke, Diabetes,PhysActivity, HvyAlcoholConsump, GenHlth, MentHlth, PhysHlth, DiffWalk, Sex, Age]
