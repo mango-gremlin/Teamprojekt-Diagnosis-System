@@ -67,8 +67,8 @@ classdef DiabetesCommunicator
                 end
             end
 
-            infoText
-            %outputArg = infoText;
+            %infoText
+            outputArg = infoText;
 
         end 
 
