@@ -81,7 +81,7 @@ classdef SuperCommunicator
 
             values = input.Properties.VariableNames
 
-            for i = 1:7
+            for i = 1:width(input)
                 output(i) = values(i) + ": " + input.(i) + newline; 
             end
 
