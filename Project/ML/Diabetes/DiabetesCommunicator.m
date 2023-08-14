@@ -20,9 +20,9 @@ classdef DiabetesCommunicator
             prediction = model.predictFcn(input);
             
             if prediction(1) == 1
-                outputArg = "diabetes"
+                outputArg = "diabetes";
             else
-                outputArg = "no diabetes"
+                outputArg = "no diabetes";
             end
 
         end
