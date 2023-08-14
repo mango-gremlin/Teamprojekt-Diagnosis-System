@@ -9,6 +9,10 @@ classdef DiabetesCommunicator
     %   compares input to healthy values, and gives info text on unhealthy
     %   values.
 
+    properties
+        infoTablePath = ['Project' filesep 'ML' filesep 'Diabetes' filesep 'diabetes_infotext.csv']
+    end
+
     
     methods(Static)
                
@@ -19,6 +23,8 @@ classdef DiabetesCommunicator
             model = diabetesBaggedTreeModel;
             prediction = model.predictFcn(input);
             
+            outputArg = generateOutputfromPrediction(prediction)
+
             if prediction(1) == 1
                 outputArg = "diabetes"
             else
