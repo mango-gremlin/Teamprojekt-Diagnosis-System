@@ -60,7 +60,7 @@ change = ["Consider relocating your cows.",
     "Relocate to a non-tropical region away from bodies of water."]
 
 % further reading
-sources = ["https://www.fli.de/en/news/animal-disease-situation/lumpy-skin-disease/#:~:text=of%2006.09.2016-,Lumpy%20Skin%20Disease%20(%20LSD%20)%20is%20a%20notifiable%20animal%20disease%20of,countries%20and%20ultimately%20to%20Europe",
+sources = ["https://www.fli.de/en/news/animal-disease-situation/lumpy-skin-disease/",
     "http://www.oie.int/fileadmin/Home/eng/Health_standards/tahm/2.04.13_LSD.pdf", 
     "Coetzer, J.A.W. (2004). Infectious Diseases of Livestock. Cape Town: Oxford University Press. pp. 1268–1276", 
     "Coetzer, J.A.W. (2004). Infectious Diseases of Livestock. Cape Town: Oxford University Press. pp. 1268–1276.", 
@@ -70,7 +70,7 @@ sources = ["https://www.fli.de/en/news/animal-disease-situation/lumpy-skin-disea
     "Tulman, E. R.; Afonso, C. L.; Lu, Z.; Zsak, L.; Kutish, G. F.; Rock, D. L. (1 August 2001). Genome of Lumpy Skin Disease Virus. Journal of Virology. 75 (15): 7122–7130. doi:10.1128/JVI.75.15.7122-7130.2001. ISSN 0022-538X. PMC 114441. PMID 11435593"]
 
 % full table
-infoTexts = table(colnames, fullnames, meaning, interpretation, change)
+infoTexts = table(colnames, fullnames, meaning, interpretation, change, sources)
 
 % save table
 writetable(infoTexts, "lumpyskin_infotext.csv", 'QuoteStrings', true);

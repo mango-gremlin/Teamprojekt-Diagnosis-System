@@ -9,7 +9,7 @@ classdef DiabetesCommunicator
     %   compares input to healthy values, and gives info text on unhealthy
     %   values.
 
-    
+        
     methods(Static)
                
         function outputArg = returnPrediction(input)
@@ -20,62 +20,16 @@ classdef DiabetesCommunicator
             prediction = model.predictFcn(input);
             
             if prediction(1) == 1
-                outputArg = "diabetes"
+                outputArg = "diabetes";
             else
-                outputArg = "no diabetes"
+                outputArg = "no diabetes";
             end
 
         end
 
         function outputArg = returnInfo(input)
-            % RETURNINFO returns which values are
-            % unhealthy and information about these values as strings
-            % together in a big string array.
-
-            % read in table of health info text
-            % IMPORTANT: to preserve line breaks, when reading in:
-            opts = detectImportOptions(['Project' filesep 'ML' filesep 'Diabetes' filesep 'diabetes_infotext.csv']);
-            healthInfo = readtable(['Project' filesep 'ML' filesep 'Diabetes' filesep 'diabetes_infotext.csv'], opts);
-
-            %healthInfo;
-
-            % find out which values are healthy and which are not
-            unhealthy = DiabetesCommunicator.getUnhealthyValues(input);
-
-            % for the unhealthy values add a string containing the info
-            % text
-
-            % generate output array the size of the number of unhealthy
-            % values 
-            infoText = strings(sum(unhealthy, 'all'),0);
-
-            textPosition = 1;
-
-            for i = 1:7
-                if(unhealthy(i) == 1)
-                    spacer = "______________________";
-                    title = "=======" + upper(string(healthInfo.fullnames(i))) + "=======" + newline;
-                    meaning = newline + "---" + "MEANING" + newline + string(healthInfo.meaning(i)) + newline;
-                    interpretation = newline + "---" + "INTERPRETATION" + newline + string(healthInfo.interpretation(i)) + newline;
-                    change = newline + "---" + "HOW TO IMPROVE" + newline + string(healthInfo.change(i)) + newline;
-                    sources = newline + "---" + "FURTHER INFORMATION" + newline + string(healthInfo.sources(i)) + newline;
-
-                    currentText = newline + title + newline + meaning + interpretation + change + sources + newline + spacer + newline;
-
-                    infoText(textPosition) = currentText;
-
-                    textPosition = textPosition + 1;
-                end
-            end
-
-            if(textPosition==1)
-                infoText = "All your values are healthy. See a doctor if any of the values change." + newline + "(or you did not input anything, in which case, please stop playing around.)"
-            end
-
-            %infoText = infoText + '\bf Meaning \rm'
-            outputArg = infoText;
-
-        end 
+            outputArg = SuperCommunicator.returnInfo(['Project' filesep 'ML' filesep 'Diabetes' filesep 'diabetes_infotext.csv'], DiabetesCommunicator.getUnhealthyValues(input));
+        end
 
         function outputArg = getUnhealthyValues(input)
             % GETUNHEALTHYVALUES checks for each input value whether is is healthy
@@ -93,21 +47,8 @@ classdef DiabetesCommunicator
             % value
             % 
             inputRows = 7;
-            % 
-            % Pregnancies=[1];
-            % Glucose=[300];
-            % BloodPressure=[90];
-            % SkinThickness=[30];
-            % Insulin=[150];
-            % BMI=[30];
-            % Age=[32];
-            % 
-            % input_test = table(Pregnancies, Glucose, BloodPressure, SkinThickness, Insulin, BMI, Age);
-
-            %test.(1)
-
-            %healthyAvg(1, 3)
-
+            
+        
             % create a new table that saves whether values were unhealthy
             % (TRUE) or healthy (FALSE)
             % the row numbers reflect those in the healthyAvg and

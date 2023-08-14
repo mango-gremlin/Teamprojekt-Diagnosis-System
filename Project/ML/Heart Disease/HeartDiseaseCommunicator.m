@@ -81,54 +81,9 @@ classdef HeartDiseaseCommunicator
             end
         end
 
-        function outputArg = returnInfo(input_joint,input_tidy)
-            % RETURNINFO returns which values are
-            % unhealthy and information about these values as strings
-            % together in a big string array.
-
-            % read in table of health info text
-            % IMPORTANT: to preserve line breaks, when reading in:
-            opts = detectImportOptions(['Project' filesep 'ML' filesep 'Heart Disease' filesep 'heart_infotext.csv']);
-            healthInfo = readtable(['Project' filesep 'ML' filesep 'Heart Disease' filesep 'heart_infotext.csv'], opts);
-
-            %healthInfo;
-
-            % find out which values are healthy and which are not
-            unhealthy = HeartDiseaseCommunicator.getUnhealthyValues(input_joint, input_tidy);
-
-            % for the unhealthy values add a string containing the info
-            % text
-
-            % generate output array the size of the number of unhealthy
-            % values 
-            infoText = strings(sum(unhealthy, 'all'),0);
-
-            textPosition = 1;
-
-            for i = 1:24
-                if(unhealthy(i) == 1)
-                    spacer = "______________________";
-                    title = "=======" + upper(string(healthInfo.fullnames(i))) + "=======" + newline;
-                    meaning = newline + "---" + "MEANING" + newline + string(healthInfo.meaning(i)) + newline;
-                    interpretation = newline + "---" + "INTERPRETATION" + newline + string(healthInfo.interpretation(i)) + newline;
-                    change = newline + "---" + "HOW TO IMPROVE" + newline + string(healthInfo.change(i)) + newline;
-                    sources = newline + "---" + "FURTHER INFORMATION" + newline + string(healthInfo.sources(i)) + newline;
-
-                    currentText = newline + title + newline + meaning + interpretation + change + sources + newline + spacer + newline;
-
-                    infoText(textPosition) = currentText;
-
-                    textPosition = textPosition + 1;
-                end
-            end
-
-            if(textPosition==1)
-                infoText = "All your values are healthy. See a doctor if any of the values change." + newline + "(or you did not input anything, in which case, please stop playing around.)"
-            end
-
-            outputArg = infoText;
-
-        end 
+        function outputArg = returnInfo(input_joint, input_tidy)
+            outputArg = SuperCommunicator.returnInfo(['Project' filesep 'ML' filesep 'Heart Disease' filesep 'heart_infotext.csv'], HeartDiseaseCommunicator.getUnhealthyValues(input_joint, input_tidy));
+        end
 
         function outputArg = getUnhealthyValues(input_joint, input_tidy)
             % GETUNHEALTHYVALUES checks for each input value whether is is healthy
@@ -138,35 +93,13 @@ classdef HeartDiseaseCommunicator
             % read in table of healthy values
             healthyAvg = readtable(['Project' filesep 'ML' filesep 'Heart Disease' filesep 'heart_averageHealthyValues.csv']);
 
-            %healthyAvg
-
             % check input for joint_heart for unhealthy values
 
             % loop through input, compare input with respective healthy
             % value
             % 
             inputJointRows = 13;
-            % 
-            % age=[1];
-            % sex=[1];
-            % cp=[2];
-            % trestbps=[1];
-            % chol=[1];
-            % fbs=[1];
-            % restecg=[1];
-            % thalach=[1];
-            % exang=[1];
-            % oldpeak=[1];
-            % slope=[1];
-            % ca=[1];
-            % thal=[1];
-            % 
-            % inputjointtest = table(age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal);
-
-            %test.(1)
-
-            %healthyAvg(1, 3)
-
+            
             % create a new table that saves whether values were unhealthy
             % (TRUE) or healthy (FALSE)
             % the row numbers reflect those in the healthyAvg and
@@ -220,23 +153,6 @@ classdef HeartDiseaseCommunicator
             % genders.
             % age only classified as unhealthy if > 45 (risk increases)
 
-            % HighBP=[1];
-            % HighChol=[1];
-            % BMI=[2];
-            % Smoker=[1];
-            % Stroke=[1];
-            % Diabetes=[1];
-            % PhysActivity=[1];
-            % HvyAlcoholConsump=[1];
-            % GenHlth=[1];
-            % MentHlth=[1];
-            % PhysHlth=[1];
-            % DiffWalk=[1];
-            % Sex=[1];
-            % Age=[1];
-            % 
-            % inputTidyTest = table(HighBP, HighChol, BMI, Smoker, Stroke, Diabetes, PhysActivity, HvyAlcoholConsump, GenHlth, MentHlth, PhysHlth, DiffWalk, Sex, Age)
-
             % number of rows in input tidy
             inputTidyRows = 14;
 
@@ -289,16 +205,8 @@ classdef HeartDiseaseCommunicator
                     end
             end
            
-
             outputArg = unhealthyValues;
         end 
 
     end
 end
-
-%% test input:
-%age = [1]
-        
-%input-joint-test = table(age, sex, cp, trestbps, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal)
-
-%input-tidy-test = table(HighBP, HighChol, BMI, Smoker, Stroke, PhysActivity, HvyAlcoholConsump, GenHlth, MentHlth, PhysHlth, DiffWalk, Sex, Age)
