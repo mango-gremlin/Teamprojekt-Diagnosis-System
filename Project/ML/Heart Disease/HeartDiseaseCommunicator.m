@@ -107,18 +107,23 @@ classdef HeartDiseaseCommunicator
 
             for i = 1:24
                 if(unhealthy(i) == 1)
-                    title = '\bf' + upper(string(healthInfo.fullnames(i))) + '\rm' + newline;
-                    meaning = '\bf' + "Meaning" + '\rm' + newline + string(healthInfo.meaning(i)) + newline;
-                    interpretation = '\bf' + "Interpretation" + '\rm' + newline + string(healthInfo.interpretation(i)) + newline;
-                    change = '\bf' + "How to Improve" + '\rm' + newline + string(healthInfo.change(i)) + newline;
-                    sources = '\bf' + "Further Information" + '\rm' + newline + string(healthInfo.sources(i)) + newline;
+                    spacer = "______________________";
+                    title = "=======" + upper(string(healthInfo.fullnames(i))) + "=======" + newline;
+                    meaning = newline + "---" + "MEANING" + newline + string(healthInfo.meaning(i)) + newline;
+                    interpretation = newline + "---" + "INTERPRETATION" + newline + string(healthInfo.interpretation(i)) + newline;
+                    change = newline + "---" + "HOW TO IMPROVE" + newline + string(healthInfo.change(i)) + newline;
+                    sources = newline + "---" + "FURTHER INFORMATION" + newline + string(healthInfo.sources(i)) + newline;
 
-                    currentText = newline + title + newline + meaning + interpretation + change + sources + newline;
+                    currentText = newline + title + newline + meaning + interpretation + change + sources + newline + spacer + newline;
 
                     infoText(textPosition) = currentText;
 
                     textPosition = textPosition + 1;
                 end
+            end
+
+            if(textPosition==1)
+                infoText = "All your values are healthy. See a doctor if any of the values change." + newline + "(or you did not input anything, in which case, please stop playing around.)"
             end
 
             outputArg = infoText;
