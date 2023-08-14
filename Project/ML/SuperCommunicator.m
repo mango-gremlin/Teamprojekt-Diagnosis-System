@@ -2,11 +2,7 @@ classdef SuperCommunicator
     %SUPERCOMMUNICATOR 
     % superclass for the other communicators
     
-    properties
-        model
-        infoTablePath
-    end
-    
+       
     methods(Static)
         % function obj = SuperCommunicator(model)
         %     %SUPERCOMMUNICATOR Construct an instance of this class
@@ -78,6 +74,20 @@ classdef SuperCommunicator
             outputArg = infoText;
 
         end
+
+        function outputArg = inputToStringArray(input)
+
+            output = strings(width(input), 0);
+
+            values = input.Properties.VariableNames
+
+            for i = 1:7
+                output(i) = values(i) + ": " + input.(i) + newline; 
+            end
+
+            outputArg = output
+        end
+
     end
 end
 
