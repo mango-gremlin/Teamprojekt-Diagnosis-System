@@ -46,13 +46,14 @@ classdef LumpySkinCommunicator
 
             for i = 1:8
                 if(unhealthy(i) == 1)
-                    title = '\bf' + upper(string(healthInfo.fullnames(i))) + '\rm' + newline;
-                    meaning = '\bf' + "Meaning" + '\rm' + newline + string(healthInfo.meaning(i)) + newline;
-                    interpretation = '\bf' + "Interpretation" + '\rm' + newline + string(healthInfo.interpretation(i)) + newline;
-                    change = '\bf' + "How to Improve" + '\rm' + newline + string(healthInfo.change(i)) + newline;
+                    spacer = "______________________";
+                    title = "=======" + upper(string(healthInfo.fullnames(i))) + "=======" + newline;
+                    meaning = newline + "---" + "MEANING" + newline + string(healthInfo.meaning(i)) + newline;
+                    interpretation = newline + "---" + "INTERPRETATION" + newline + string(healthInfo.interpretation(i)) + newline;
+                    change = newline + "---" + "HOW TO IMPROVE" + newline + string(healthInfo.change(i)) + newline;
                     %sources = '\bf' + "Further Information" + '\rm' + newline + string(healthInfo.sources(i)) + newline;
 
-                    currentText = newline + title + newline + meaning + interpretation + change +newline; %+ sources + newline;
+                    currentText = newline + title + newline + meaning + interpretation + change + newline + spacer + newline;
 
                     infoText(textPosition) = currentText;
 
@@ -60,9 +61,13 @@ classdef LumpySkinCommunicator
                 end
             end
 
-            sources = newline + newline + "SOURCES" + newline + "https://www.fli.de/en/news/animal-disease-situation/lumpy-skin-disease/#:~:text=of%2006.09.2016-,Lumpy%20Skin%20Disease%20(%20LSD%20)%20is%20a%20notifiable%20animal%20disease%20of,countries%20and%20ultimately%20to%20Europe" + newline + "http://www.oie.int/fileadmin/Home/eng/Health_standards/tahm/2.04.13_LSD.pdf" + newline + "Coetzer, J.A.W. (2004). Infectious Diseases of Livestock. Cape Town: Oxford University Press. pp. 1268–1276" + newline + "Yeruham, I; Nir, O; Braverman, Y; Davidson, M; Grinstein, H; Haymovitch, M; Zamir, O (22 July 1995). Spread of Lumpy Skin Disease in Israeli Dairy Herds. The Veterinary Record. 137–4 (4): 91–93. doi:10.1136/vr.137.4.91. PMID 8533249. S2CID 23409535." + newline + "Tulman, E. R.; Afonso, C. L.; Lu, Z.; Zsak, L.; Kutish, G. F.; Rock, D. L. (1 August 2001). Genome of Lumpy Skin Disease Virus. Journal of Virology. 75 (15): 7122–7130. doi:10.1128/JVI.75.15.7122-7130.2001. ISSN 0022-538X. PMC 114441. PMID 11435593"
+            sources = newline + newline + "---" + "FURTHER INFORMATION" + newline + "https://www.fli.de/en/news/animal-disease-situation/lumpy-skin-disease/#:~:text=of%2006.09.2016-,Lumpy%20Skin%20Disease%20(%20LSD%20)%20is%20a%20notifiable%20animal%20disease%20of,countries%20and%20ultimately%20to%20Europe" + newline + "http://www.oie.int/fileadmin/Home/eng/Health_standards/tahm/2.04.13_LSD.pdf" + newline + "Coetzer, J.A.W. (2004). Infectious Diseases of Livestock. Cape Town: Oxford University Press. pp. 1268–1276" + newline + "Yeruham, I; Nir, O; Braverman, Y; Davidson, M; Grinstein, H; Haymovitch, M; Zamir, O (22 July 1995). Spread of Lumpy Skin Disease in Israeli Dairy Herds. The Veterinary Record. 137–4 (4): 91–93. doi:10.1136/vr.137.4.91. PMID 8533249. S2CID 23409535." + newline + "Tulman, E. R.; Afonso, C. L.; Lu, Z.; Zsak, L.; Kutish, G. F.; Rock, D. L. (1 August 2001). Genome of Lumpy Skin Disease Virus. Journal of Virology. 75 (15): 7122–7130. doi:10.1128/JVI.75.15.7122-7130.2001. ISSN 0022-538X. PMC 114441. PMID 11435593"
 
             infoText(9) = sources;
+
+            if(textPosition==1)
+                infoText = "All the values lower the risk of lumpy skin disease." + newline + "(or you did not input anything, in which case, please stop playing around.)"
+            end
 
             outputArg = infoText;
 
