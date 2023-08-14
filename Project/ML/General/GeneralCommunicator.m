@@ -23,7 +23,7 @@ classdef GeneralCommunicator
             outputArg = model.predictFcn(inputTable);
         end
 
-        function precautions = getPrecautions(illness)
+        function precautions = returnInfo(illness)
             listOfPrecautions = readtable(['Project' filesep 'ML' filesep 'General' filesep 'symptom_precaution.csv']);
             % find index and extract precautions to an cell array
             if isequal(string(illness), 'healthy')
