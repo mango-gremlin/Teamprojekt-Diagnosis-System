@@ -84,7 +84,11 @@ classdef SuperCommunicator
 
             outputArg = output;
 
-        end 
+        end
+
+        function saveDiagnosis(diagnosis, information, input)
+            
+        end
 
     end
 end
