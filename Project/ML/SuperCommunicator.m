@@ -85,7 +85,14 @@ classdef SuperCommunicator
             outputArg = output;
 
         end
-
+        
+        % saveDiagnosis: saves the diagnosis, input values and additional
+        % information in a .txt file
+        % Parameter
+        % - diagnosis, string: String describing the diagnosis
+        % - information, array of string: Precautions or additional
+        % information
+        % - input, array of string: Input of symptoms or values with name
         function saveDiagnosis(diagnosis, information, input)
             
         end
