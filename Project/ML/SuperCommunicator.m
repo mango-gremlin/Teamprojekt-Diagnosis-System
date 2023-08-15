@@ -98,9 +98,9 @@ classdef SuperCommunicator
         % SuperCommunicator.saveDiagnosis('ill', {'Name:Value', 'Symptom1', 'asdas'}, {'info1', 'info2', 'info3', 'age: 0↵'})
         function saveDiagnosis(diagnosis, information, input)
             % create name
-            fileName = 'Diagnosis';
-            time = datetime('now');
-            filePath = strcat(fileName, string(time));
+            folderPath = ['Teamprojekt-Diagnosis-System' filesep 'Project' filesep 'Downloads'];
+            fileName = strcat('Diagnosis', string(datetime('now')));
+            filePath = fullfile(folderPath, fileName);
             % create file and catch error
             fileID = fopen(filePath, 'w');
 
@@ -114,7 +114,6 @@ classdef SuperCommunicator
                 % the input
                 inputHeader = 'INPUT CONFIGURATION';
                 fprintf(fileID, '%s\n', inputHeader);
-                input
                 for i= 1:numel(input)
                     % matlab clearly works in mysterious ways...
                     % checks for newline characters
