@@ -4,27 +4,7 @@ classdef SuperCommunicator
     
        
     methods(Static)
-        % function obj = SuperCommunicator(model)
-        %     %SUPERCOMMUNICATOR Construct an instance of this class
-        %     %   Detailed explanation goes here
-        % 
-        %     % load model
-        %     switch model
-        %         case "diabetes"
-        %             %load diabetes model
-        %         case "heartdisease"
-        %             %load heart model
-        % 
-        %         case "lumpyskin"
-        %             %load lumpy model
-        %             load(['Project' filesep 'ML' filesep 'Lumpy Skin' filesep 'lumpySkinBaggedTreeModel.mat']);
-        %             obj.model = lumpySkinBaggedTree;
-        %         case "general"
-        %             load(['Project' filesep 'ML' filesep 'General' filesep 'generalBaggedTreeModel.mat']);
-        %             obj.model = generalBaggedModel;
-        %     end
-        % end
-        
+              
         
         function outputArg = returnInfo(infoTablePath, unhealthy)
             % RETURNINFO returns which values are
@@ -50,7 +30,7 @@ classdef SuperCommunicator
 
             textPosition = 1;
 
-            for i = 1:7
+            for i = 1:length(unhealthy)
                 if(unhealthy(i) == 1)
                     spacer = "______________________";
                     title = "=======" + upper(string(healthInfo.fullnames(i))) + "=======" + newline;
@@ -88,6 +68,23 @@ classdef SuperCommunicator
             outputArg = output
         end
 
+        function outputArg = printUnhealthyCategories(input, unhealthy)
+            output = strings(sum(unhealthy, 'all'),0);
+
+            values = input.Properties.VariableNames;
+
+            textPosition = 1;
+
+            for i = 1:length(unhealthy)
+                if(unhealthy(i)==1)
+                    output(textPosition) = values(i);
+                    textPosition = textPosition +1;
+                end
+            end
+
+            outputArg = output;
+
+        end 
+
     end
 end
-
