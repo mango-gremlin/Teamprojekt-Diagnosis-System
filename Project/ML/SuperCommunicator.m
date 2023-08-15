@@ -95,8 +95,34 @@ classdef SuperCommunicator
         % information
         % - input, array of string: Input of symptoms or values with name
         % Test command: 
-        % SuperCommunicator.saveDiagnosis
+        % SuperCommunicator.saveDiagnosis('ill', {'Name:Value', 'Symptom1', 'asdas'}, {'info1', 'info2', 'info3'})
         function saveDiagnosis(diagnosis, information, input)
+            % create name
+            fileName = 'Diagnosis';
+            time = datetime('now');
+            filePath = strcat(fileName, string(time));
+            % create file and catch error
+            fileID = fopen(filePath, 'w');
+
+            if fileID == -1
+                error('something went wrong while creating the file');
+            else
+                % the diagnosis
+                diagnosisHeader = 'DIAGNOSIS';
+                fprintf(fileID, '%s\n%s\n\n', diagnosisHeader, diagnosis);
+
+                % the input
+                inputHeader = 'INPUT CONFIGURATION';
+                fprintf(fileID, '%s\n', inputHeader, string(input));
+                fprintf(fileID, '\n');
+
+                % additional information
+                informationHeader = 'ADDITIONAL INFORMATION/PRECAUTIONS';
+                fprintf(fileID, '%s\n', informationHeader, string(information));
+
+                fclose(fileID);
+
+            end
             
         end
 
