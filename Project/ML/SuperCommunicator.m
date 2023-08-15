@@ -95,7 +95,7 @@ classdef SuperCommunicator
         % information
         % - input, array of string: Input of symptoms or values with name
         % Test command: 
-        % SuperCommunicator.saveDiagnosis('ill', {'Name:Value', 'Symptom1', 'asdas'}, {'info1', 'info2', 'info3'})
+        % SuperCommunicator.saveDiagnosis('ill', {'Name:Value', 'Symptom1', 'asdas'}, {'info1', 'info2', 'info3', 'age: 0↵'})
         function saveDiagnosis(diagnosis, information, input)
             % create name
             fileName = 'Diagnosis';
@@ -113,13 +113,30 @@ classdef SuperCommunicator
 
                 % the input
                 inputHeader = 'INPUT CONFIGURATION';
-                fprintf(fileID, '%s\n', inputHeader, string(input));
+                fprintf(fileID, '%s\n', inputHeader);
+                input
+                for i= 1:numel(input)
+                    % matlab clearly works in mysterious ways...
+                    % checks for newline characters
+                    if ~isempty(strfind(input{i}, newline))
+                        fprintf(fileID, '%s', input{i});
+                    else
+                        fprintf(fileID, '%s\n', input{i});
+                    end
+                end
                 fprintf(fileID, '\n');
 
                 % additional information
                 informationHeader = 'ADDITIONAL INFORMATION/PRECAUTIONS';
-                fprintf(fileID, '%s\n', informationHeader, string(information));
-
+                fprintf(fileID, '%s\n', informationHeader);
+                for i= 1:numel(information)
+                    % just a precatution here
+                    if ~isempty(strfind(information{i}, newline))
+                        fprintf(fileID, '%s', information{i});
+                    else
+                        fprintf(fileID, '%s\n', information{i});
+                    end
+                end
                 fclose(fileID);
 
             end
