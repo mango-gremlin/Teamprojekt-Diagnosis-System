@@ -94,16 +94,20 @@ classdef SuperCommunicator
         % - information, array of string: Precautions or additional
         % information
         % - input, array of string: Input of symptoms or values with name
+        % - name, string: name of the predicted 
         % Test command: 
-        % SuperCommunicator.saveDiagnosis('ill', {'Name:Value', 'Symptom1', 'asdas'}, {'info1', 'info2', 'info3', 'age: 0↵'})
-        function saveDiagnosis(diagnosis, information, input)
+        % SuperCommunicator.saveDiagnosis('ill', {'Name:Value', 'Symptom1', 'asdas'}, {'info1', 'info2', 'info3', 'age: 0↵'}, 'test)
+        function nameOfFile = saveDiagnosis(diagnosis, information, input, name)
             % create name
             folderPath = ['Project' filesep 'Downloads'];
             
             % spaces in file names lead to error on windows system, this
             % replaces them
             stringTime = strrep(string(datetime('now')), ' ', '-');
-            fileName = strcat('Diagnosis', stringTime);
+            % add first part of name
+            fileHeader = strcat('Diagnosis', name);
+
+            fileName = strcat(fileHeader, stringTime);
             filePath = fullfile(folderPath, fileName);
             % create file and catch error
             fileID = fopen(filePath, 'w');
@@ -140,7 +144,7 @@ classdef SuperCommunicator
                     end
                 end
                 fclose(fileID);
-
+                nameOfFile = fileName;
             end
             
         end
