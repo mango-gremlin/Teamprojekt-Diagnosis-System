@@ -103,9 +103,10 @@ classdef SuperCommunicator
             % create name
             folderPath = ['Project' filesep 'Downloads'];
             
-            % spaces in file names lead to error on windows system, this
+            % some characters in file names lead to error on windows system, this
             % replaces them
             stringTime = strrep(string(datetime('now')), ' ', '-');
+            stringTime = strrep(stringTime, ':', '_');
             % add first part of name
             fileHeader = strcat('Diagnosis', name);
 
@@ -118,7 +119,8 @@ classdef SuperCommunicator
             else
                 % the diagnosis
                 diagnosisHeader = 'DIAGNOSIS';
-                fprintf(fileID, '%s\n%s\n\n', diagnosisHeader, diagnosis);
+                fprintf(fileID, '%s\n%s\n', diagnosisHeader, diagnosis);
+                fprintf(fileID, '\n');
 
                 % the input
                 inputHeader = 'INPUT CONFIGURATION';
