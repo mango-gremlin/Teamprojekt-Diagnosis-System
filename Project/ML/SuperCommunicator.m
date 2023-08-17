@@ -84,7 +84,70 @@ classdef SuperCommunicator
 
             outputArg = output;
 
-        end 
+        end
 
+        % saveDiagnosis: saves the diagnosis, input values and additional
+        % information in a .txt file under saved diagnosis. 
+        % Name: Diagnosis + timestemp
+        % Parameter
+        % - diagnosis, string: String describing the diagnosis
+        % - information, array of string: Precautions or additional
+        % information
+        % - input, array of string: Input of symptoms or values with name
+        % - name, string: name of the predicted 
+        % Output
+        % - nameOfFile, string: name of the saved file
+        % Test command: 
+        % SuperCommunicator.saveDiagnosis('ill', {'Name:Value', 'Symptom1', 'asdas'}, {'info1', 'info2', 'info3', 'age: 0↵'}, 'test')
+        function nameOfFile = saveDiagnosis(diagnosis, information, input, name)
+            % create name
+            folderPath = ['Project' filesep 'Downloads'];
+            
+            % spaces in file names lead to error on windows system, this
+            % replaces them
+            stringTime = strrep(string(datetime('now')), ' ', '-');
+            % add first part of name
+            fileHeader = strcat('Diagnosis', name);
+
+            fileName = strcat(fileHeader, stringTime);
+            filePath = fullfile(folderPath, fileName);
+            % create file and catch error
+            fileID = fopen(filePath, 'w');
+            if fileID == -1
+                error('something went wrong while creating the file');
+            else
+                % the diagnosis
+                diagnosisHeader = 'DIAGNOSIS';
+                fprintf(fileID, '%s\n%s\n\n', diagnosisHeader, diagnosis);
+
+                % the input
+                inputHeader = 'INPUT CONFIGURATION';
+                fprintf(fileID, '%s\n', inputHeader);
+                for i= 1:numel(input)
+                    % matlab clearly works in mysterious ways...
+                    % checks for newline characters
+                    if ~isempty(strfind(input{i}, newline))
+                        fprintf(fileID, '%s', input{i});
+                    else
+                        fprintf(fileID, '%s\n', input{i});
+                    end
+                end
+                fprintf(fileID, '\n');
+
+                % additional information
+                informationHeader = 'ADDITIONAL INFORMATION/PRECAUTIONS';
+                fprintf(fileID, '%s\n', informationHeader);
+                for i= 1:numel(information)
+                    % just a precatution here
+                    if ~isempty(strfind(information{i}, newline))
+                        fprintf(fileID, '%s', information{i});
+                    else
+                        fprintf(fileID, '%s\n', information{i});
+                    end
+                end
+                fclose(fileID);
+                nameOfFile = fileName;
+            end
+        end
     end
 end
