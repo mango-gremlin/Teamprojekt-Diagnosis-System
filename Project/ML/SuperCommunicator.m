@@ -99,7 +99,11 @@ classdef SuperCommunicator
         function saveDiagnosis(diagnosis, information, input)
             % create name
             folderPath = ['Project' filesep 'Downloads'];
-            fileName = strcat('Diagnosis', string(datetime('now')));
+            
+            % spaces in file names lead to error on windows system, this
+            % replaces them
+            stringTime = strrep(string(datetime('now')), ' ', '-');
+            fileName = strcat('Diagnosis', stringTime);
             filePath = fullfile(folderPath, fileName);
             % create file and catch error
             fileID = fopen(filePath, 'w');
