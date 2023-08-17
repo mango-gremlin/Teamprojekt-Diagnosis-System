@@ -95,6 +95,8 @@ classdef SuperCommunicator
         % information
         % - input, array of string: Input of symptoms or values with name
         % - name, string: name of the predicted 
+        % Output
+        % - nameOfFile, string: name of the saved file
         % Test command: 
         % SuperCommunicator.saveDiagnosis('ill', {'Name:Value', 'Symptom1', 'asdas'}, {'info1', 'info2', 'info3', 'age: 0↵'}, 'test)
         function nameOfFile = saveDiagnosis(diagnosis, information, input, name)
