@@ -98,12 +98,11 @@ classdef SuperCommunicator
         % SuperCommunicator.saveDiagnosis('ill', {'Name:Value', 'Symptom1', 'asdas'}, {'info1', 'info2', 'info3', 'age: 0↵'})
         function saveDiagnosis(diagnosis, information, input)
             % create name
-            folderPath = ['Teamprojekt-Diagnosis-System' filesep 'Project' filesep 'Downloads'];
+            folderPath = ['Project' filesep 'Downloads'];
             fileName = strcat('Diagnosis', string(datetime('now')));
             filePath = fullfile(folderPath, fileName);
             % create file and catch error
             fileID = fopen(filePath, 'w');
-
             if fileID == -1
                 error('something went wrong while creating the file');
             else
