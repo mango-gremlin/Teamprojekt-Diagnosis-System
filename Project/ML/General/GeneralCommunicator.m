@@ -36,7 +36,7 @@ classdef GeneralCommunicator
         % Output: Array of strings, from 1 to 4 precautions
         function precautions = returnInfo(illness)
             % load file, change if files gets moved
-            listOfPrecautions = readtable(['Project' filesep 'ML' filesep 'General' filesep 'symptom_precaution.csv']);
+            listOfPrecautions = readtable(['Project' filesep 'ML' filesep 'General' filesep 'datasets' filesep 'symptom_precaution.csv']);
 
             % find index and extract precautions to an cell array
             if isequal(string(illness), 'healthy')
@@ -62,7 +62,7 @@ classdef GeneralCommunicator
         % Output: Description of illness, string 
         function description = returnDescription(illness)
             % load file, change if files gets moved
-            listOfDescriptions = readtable(['Project' filesep 'ML' filesep 'General' filesep 'symptom_Description.csv']);
+            listOfDescriptions = readtable(['Project' filesep 'ML' filesep 'General' filesep 'datasets' filesep 'symptom_Description.csv']);
             if isequal(string(illness), 'healthy')
                 % healthy was added and is not the in file
                 description = '';

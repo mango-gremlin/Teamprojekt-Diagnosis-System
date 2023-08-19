@@ -32,11 +32,11 @@ classdef GeneralCommunicator
         
         % Returns the precautions of a given disease, requires access to
         % 'symptom_precaution.csv'. Returns a maximum of 4 precaution
-        % Input : Illness, categorical or string of illness
+        % Input : Illness, categorical or string of name of illness
         % Output: Array of strings, from 1 to 4 precautions
         function precautions = returnInfo(illness)
             % load file, change if files gets moved
-            listOfPrecautions = readtable(['Project' filesep 'ML' filesep 'General' filesep 'symptom_precaution.csv']);
+            listOfPrecautions = readtable(['Project' filesep 'ML' filesep 'General' filesep 'datasets' filesep 'symptom_precaution.csv']);
 
             % find index and extract precautions to an cell array
             if isequal(string(illness), 'healthy')
@@ -56,12 +56,18 @@ classdef GeneralCommunicator
             end
         end
         
-        % Returns the precautions of a given disease
+        % Returns the descriptions of an given disease, requires access to
+        % 'symptom_description.csv'. 
+        % Input : Illness,  categorical or string of name of illness
+        % Output: Description of illness, string 
         function description = returnDescription(illness)
-            listOfDescriptions = readtable(['Project' filesep 'ML' filesep 'General' filesep 'symptom_Description.csv']);
+            % load file, change if files gets moved
+            listOfDescriptions = readtable(['Project' filesep 'ML' filesep 'General' filesep 'datasets' filesep 'symptom_Description.csv']);
             if isequal(string(illness), 'healthy')
+                % healthy was added and is not the in file
                 description = '';
             else
+                % find index and return the description as string
                 index = find(strcmp(listOfDescriptions.Disease, string(illness)));
                 decriptionsIllness = listOfDescriptions(index, 2);
                 description = decriptionsIllness.Description;
