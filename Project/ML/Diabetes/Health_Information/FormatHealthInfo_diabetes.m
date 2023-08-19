@@ -15,7 +15,7 @@ colnames = ["Pregnancies",
 
 % array with average healthy values
 % array with healthy average values
-datadiabetes = readtable(['Project' filesep 'ML' filesep 'Diabetes' filesep 'diabetes-dataset-full.csv']);
+datadiabetes = readtable(['Project' filesep 'ML' filesep 'Diabetes' filesep 'Datasets' filesep 'diabetes-dataset-full.csv']);
 
 healthyAvg = zeros(1,8);
 sumOfHealthyValues = zeros(1,8);
