@@ -31,7 +31,7 @@ colnames = ["cp",
     "PhysHlth",
     "DiffWalk",
     "Sex", 
-    "Age"]
+    "Age"];
 
 % array with full names
 fullnames = ["chest pain type", 
@@ -56,15 +56,15 @@ fullnames = ["chest pain type",
     "physical health",
     "difficulty walking or climbing stairs",
     "age in years",
-    "sex"]
+    "sex"];
 
 % array with healthy average values
-dataHeart = readtable(['Project' filesep 'ML' filesep 'Heart Disease' filesep 'joined_heart_heartdisease.csv']);
+dataHeart = readtable(['Project' filesep 'ML' filesep 'Heart Disease' filesep 'Datasets' filesep 'joined_heart_heartdisease.csv']);
 
 healthyAvg = zeros(1,23);
 sumOfHealthyValues = zeros(1,23);
 
-rows = height(dataHeart)
+rows = height(dataHeart);
 
 for k = 3:13
     for row = 1:rows
@@ -92,17 +92,17 @@ for k = 1:11
     healthyAvg(k) = healthyAvg(k) / sumOfHealthyValues(k);
 end
 
-sumOfHealthyValues
-healthyAvg
+sumOfHealthyValues;
+healthyAvg;
 
 % load heart disease health indicators dataset and compute average of
 % healthy values
-dataHeartIndicators = readtable(['Project' filesep 'ML' filesep 'Heart Disease' filesep 'tidy_heart_disease_indicators.csv']);
+dataHeartIndicators = readtable(['Project' filesep 'ML' filesep 'Heart Disease' filesep 'Datasets' filesep 'tidy_heart_disease_indicators.csv']);
 
-healthyAvg2 = zeros(1,12)
-sumOfHealthyValues2 = zeros(1,12)
+healthyAvg2 = zeros(1,12);
+sumOfHealthyValues2 = zeros(1,12);
 
-rows2 = height(dataHeartIndicators)
+rows2 = height(dataHeartIndicators);
 
 for k = 4:13
     for row = 1:rows2
@@ -125,7 +125,7 @@ for k = 4:13
         end 
     end
    % tableIndex
-    healthyAvg2
+    healthyAvg2;
    % tableIndex = tableIndex+1;
 end
 
@@ -141,7 +141,7 @@ end
 
 
 
-healthyAvg = healthyAvg'
+healthyAvg = healthyAvg';
 
 % make table
 health_info = table(colnames,fullnames,healthyAvg);

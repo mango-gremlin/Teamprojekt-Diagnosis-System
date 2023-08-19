@@ -48,7 +48,7 @@ classdef SuperCommunicator
             end
 
             if(textPosition==1)
-                infoText = "All your values are healthy. See a doctor if any of the values change." + newline + "(or you did not input anything, in which case, please stop playing around.)"
+                infoText = "All your values are healthy. See a doctor if any of the values change." + newline + "(or you did not input anything, in which case, please stop playing around.)";
             end
 
             outputArg = infoText;
@@ -59,13 +59,13 @@ classdef SuperCommunicator
 
             output = strings(width(input), 0);
 
-            values = input.Properties.VariableNames
+            values = input.Properties.VariableNames;
 
             for i = 1:width(input)
                 output(i) = values(i) + ": " + input.(i) + newline; 
             end
 
-            outputArg = output
+            outputArg = output;
         end
 
         function outputArg = printUnhealthyCategories(input, unhealthy)
