@@ -14,6 +14,24 @@ Betreuer: Wolfgang Fuhl
 ## Trello: 
 https://trello.com/b/r5shBZAH/teamprojekt
 
+# How to use the program
+The program should be access through matlab. When the program is opened, the current folder should be either 
+1. 'Teamprojekt-Diagnose-System' (*preferred*)
+2. 'Project'
+3. subfolder of the above <br> 
+<br>
+The program can be exeuted by  <br>
+1. opening the StartUpApp.mlapp in the Project/GUI/approach2 folder (*Preferred*) <br>
+2. by opening Skin/General/Diabetes/HeartApp.mlapp (!not PredictionsApp.mlapp). <br>
+<br>
+!! Note: If the programm is opening in the second way, the necessary folder may not be added to the path and this has to be done manuelly (rightclick 'Project' -> Add to path -> Selected folders and subfolders)!!  <br>
+<br>
+If a diagnosis is saved, a file will be created in 'Project/Downloads'  <br>
+<br>
+!! Note: More details about the program are below or in additional ReadME files !! 
+
+
+
 # Overview
 
 ## Motivation
