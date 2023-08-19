@@ -28,7 +28,7 @@ classdef DiabetesCommunicator
         end
 
         function outputArg = returnInfo(input)
-            outputArg = SuperCommunicator.returnInfo(['Project' filesep 'ML' filesep 'Diabetes' filesep 'diabetes_infotext.csv'], DiabetesCommunicator.getUnhealthyValues(input));
+            outputArg = SuperCommunicator.returnInfo(['Project' filesep 'ML' filesep 'Diabetes' filesep 'Health_Information' filesep 'diabetes_infotext.csv'], DiabetesCommunicator.getUnhealthyValues(input));
         end
 
         function outputArg = getUnhealthyValues(input)
@@ -37,7 +37,7 @@ classdef DiabetesCommunicator
             % them in an output table and returns this table
 
             % read in table of healthy values
-            healthyAvg = readtable(['Project' filesep 'ML' filesep 'Diabetes' filesep 'diabetes_averageHealthyValues.csv']);
+            healthyAvg = readtable(['Project' filesep 'ML' filesep 'Diabetes' filesep 'Health_Information' filesep 'diabetes_averageHealthyValues.csv']);
 
             healthyAvg;
 
