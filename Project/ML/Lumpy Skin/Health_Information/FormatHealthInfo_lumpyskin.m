@@ -18,7 +18,7 @@ colnames = ["x",
     "dominant_land_cover"];
 
 % array with healthy average values
-dataLumpy = readtable(['Project' filesep 'ML' filesep 'Lumpy Skin' filesep 'Lumpy skin disease data.csv']);
+dataLumpy = readtable(['Project' filesep 'ML' filesep 'Lumpy Skin' filesep 'Datasets' filesep 'Lumpy skin disease data.csv']);
 
 healthyAvg = zeros(1,11);
 sumOfHealthyValues = zeros(1,11);
