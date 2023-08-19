@@ -21,7 +21,7 @@ classdef LumpySkinCommunicator
         end
 
         function outputArg = returnInfo(input)
-            outputArg = SuperCommunicator.returnInfo(['Project' filesep 'ML' filesep 'Lumpy Skin' filesep 'lumpyskin_infotext.csv'], LumpySkinCommunicator.getUnhealthyValues(input));
+            outputArg = SuperCommunicator.returnInfo(['Project' filesep 'ML' filesep 'Lumpy Skin' filesep 'Health_Information' filesep 'lumpyskin_infotext.csv'], LumpySkinCommunicator.getUnhealthyValues(input));
         end
 
         function outputArg = getUnhealthyValues(input)
@@ -30,7 +30,7 @@ classdef LumpySkinCommunicator
             % them in an output table and returns this table
 
             % read in table of healthy values
-            healthyAvg = readtable(['Project' filesep 'ML' filesep 'Lumpy Skin' filesep 'lumpyskin_averageHealthyValues.csv']);
+            healthyAvg = readtable(['Project' filesep 'ML' filesep 'Lumpy Skin' filesep 'Health_Information' filesep 'lumpyskin_averageHealthyValues.csv']);
 
             healthyAvg;
 
