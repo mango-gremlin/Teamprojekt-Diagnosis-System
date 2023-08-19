@@ -82,7 +82,7 @@ classdef HeartDiseaseCommunicator
         end
 
         function outputArg = returnInfo(input_joint, input_tidy)
-            outputArg = SuperCommunicator.returnInfo(['Project' filesep 'ML' filesep 'Heart Disease' filesep 'heart_infotext.csv'], HeartDiseaseCommunicator.getUnhealthyValues(input_joint, input_tidy));
+            outputArg = SuperCommunicator.returnInfo(['Project' filesep 'ML' filesep 'Heart Disease' filesep 'Health_Information' filesep 'heart_infotext.csv'], HeartDiseaseCommunicator.getUnhealthyValues(input_joint, input_tidy));
         end
 
         function outputArg = getUnhealthyValues(input_joint, input_tidy)
@@ -91,7 +91,7 @@ classdef HeartDiseaseCommunicator
             % them in an output table and returns this table
 
             % read in table of healthy values
-            healthyAvg = readtable(['Project' filesep 'ML' filesep 'Heart Disease' filesep 'heart_averageHealthyValues.csv']);
+            healthyAvg = readtable(['Project' filesep 'ML' filesep 'Heart Disease' filesep 'Health_Information' filesep 'heart_averageHealthyValues.csv']);
 
             % check input for joint_heart for unhealthy values
 
