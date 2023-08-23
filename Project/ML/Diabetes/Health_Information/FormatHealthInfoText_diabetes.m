@@ -62,7 +62,7 @@ change = ["Before getting pregnant, one way to prevent gestational diabetes is l
 sources = ["https://www.cdc.gov/diabetes/basics/gestational.html", 
     "https://www.cdc.gov/diabetes/basics/getting-tested.html#:~:text=Fasting%20Blood%20Sugar%20Test,higher%20indicates%20you%20have%20diabetes.", 
     "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4317611/#:~:text=It%20has%20been%20observed%20that,hypertensives%20develop%20diabetes%5B12%5D.", 
-    "SkinThickness", 
+    "https://pubmed.ncbi.nlm.nih.gov/2721339/#:~:text=Skin%20thickness%20is%20primarily%20determined,dependent%20diabetes%20mellitus%20(IDDM)", 
     "https://my.clevelandclinic.org/health/diseases/24178-hyperinsulinemia", 
     "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0229716", 
     "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9843502/#:~:text=Advanced%20age%20is%20a%20major%20risk%20factor%20for%20diabetes%20and%20prediabetes.&text=Therefore%2C%20the%20elderly%20has%20a,%2C%20retinal%2C%20and%20renal%20systems.", 
