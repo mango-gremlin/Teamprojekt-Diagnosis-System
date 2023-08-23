@@ -65,7 +65,7 @@ classdef GeneralCommunicator
             listOfDescriptions = readtable(['Project' filesep 'ML' filesep 'General' filesep 'datasets' filesep 'symptom_Description.csv']);
             if isequal(string(illness), 'healthy')
                 % healthy was added and is not the in file
-                description = '';
+                description = 'You seem to be healthy.';
             else
                 % find index and return the description as string
                 index = find(strcmp(listOfDescriptions.Disease, string(illness)));
