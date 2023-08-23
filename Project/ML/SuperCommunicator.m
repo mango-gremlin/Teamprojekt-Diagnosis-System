@@ -126,7 +126,7 @@ classdef SuperCommunicator
         % SuperCommunicator.saveDiagnosis('ill', {'Name:Value', 'Symptom1', 'asdas'}, {'info1', 'info2', 'info3', 'age: 0↵'}, 'test')
         function nameOfFile = saveDiagnosis(diagnosis, information, input, name)
             % create name
-            folderPath = ['Project' filesep 'Downloads'];
+            folderPath = ['Downloads'];
             
             % some characters in file names lead to error on windows system, this
             % replaces them
