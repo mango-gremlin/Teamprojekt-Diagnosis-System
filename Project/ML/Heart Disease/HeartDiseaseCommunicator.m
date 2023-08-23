@@ -1,17 +1,34 @@
 classdef HeartDiseaseCommunicator
-    %HEARTDISEASECOMMUNICATOR Summary of this class goes here
-    %   takes the input from gui
-    %   loads heart disease model(s)
-    %   predicts with model
+    %HEARTDISEASECOMMUNICATOR %   takes the input from gui
+    %   loads both heart disease models
+    %   checks whether both models received input
+    %   predicts with both models
     %   returns predicted value
-
-    %   also returns information on how healthy the input values are
+    %
+    %   furthermore: 
+    %   compares input to healthy values, and gives info text on unhealthy
+    %   values.
+    % contians the functions:
+    % - returnPrediction: returns a prediction of heart disease outcome on the
+    % input values
+    % - returnInfo: calls the supercommunicator returnInfo function using
+    % the heart disease info table and heart disease unhealthy values function as
+    % input
+    % - getUnhealthyValues: according to average healthy values &
+    % literature, assesses which input values can be classified as
+    % unhealthy
     
     methods(Static)
         
         function outputArg = returnPrediction(input_joint, input_tidy)
-            %RETURNPREDICTION loads the appropriate model(s) and runs a
-            %prediction, outputs the prediction as a string
+            % RETURN PREDICTION loads both heart disease models and uses the input
+            % to make a prediction on heart disease outcome, which is outputted
+            % as a string
+            % also checks whether both models received input and only
+            % predicts on the model(s) that received an input
+            %
+            % Arguments:
+            % - input from GUI (table)
             
             % check if joint_input is empty
             rows_j = height(input_joint);
@@ -82,6 +99,13 @@ classdef HeartDiseaseCommunicator
         end
 
         function outputArg = returnInfo(input_joint, input_tidy)
+            % RETURN INFO loads the supercommunicator return info function
+            % with heart disease health info table and heart disease unhealthy values
+            % function as input
+            %
+            % Arguments:
+            % - input from GUI (table)
+
             outputArg = SuperCommunicator.returnInfo(['Project' filesep 'ML' filesep 'Heart Disease' filesep 'Health_Information' filesep 'heart_infotext.csv'], HeartDiseaseCommunicator.getUnhealthyValues(input_joint, input_tidy));
         end
 
@@ -89,6 +113,9 @@ classdef HeartDiseaseCommunicator
             % GETUNHEALTHYVALUES checks for each input value whether is is healthy
             % and save info on what values are unhealthy & how to change
             % them in an output table and returns this table
+            %
+            % Arguments:
+            % - input from GUI (table)
 
             % read in table of healthy values
             healthyAvg = readtable(['Project' filesep 'ML' filesep 'Heart Disease' filesep 'Health_Information' filesep 'heart_averageHealthyValues.csv']);
