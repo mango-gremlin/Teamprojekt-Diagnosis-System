@@ -1,0 +1,127 @@
+DIAGNOSIS
+no lumpy skin
+
+INPUT CONFIGURATION
+cld: 5
+dominant_land_cover: 5
+frs: 3
+pre: 15
+tmn: 56.0188
+tmp: 45.6731
+tmx: 25.1436
+vap: 40
+wet: 15
+x: 130.4692
+y: 48.2525
+
+Your unhealthy values:
+cld
+frs
+tmn
+tmp
+tmx
+vap
+
+ADDITIONAL INFORMATION/PRECAUTIONS
+
+=======GLOBAL LATITUDE AND LONGITUDE=======
+
+
+---MEANING
+Global Latitude and Longitude
+
+---INTERPRETATION
+The coordinates are a strong determinant of every other meteorological and geospatial parameter. This characteristic in itself, make x and y the best predictors for lumpy skin disease. LSD is endemic in Africa and the Middle East. Since 2015, several Southeastern European countries have been affected; the disease is spreading from the Balkans in a Northwestern direction. It is mainly transmitted by arthropods.
+
+---HOW TO IMPROVE
+Consider relocating your cows.
+
+---FURTHER INFORMATION
+https://www.fli.de/en/news/animal-disease-situation/lumpy-skin-disease/
+
+______________________
+
+=======FROST=======
+
+
+---MEANING
+Average number of days per month with presence of frost.
+
+---INTERPRETATION
+Blood-feeding insects such as mosquitos and flies act as mechanical vectors to spread the disease. The virus has been isolated from Stomoxys, Biomyia fasciata, Tabanidae, Glossina, and Culicoides species, all of which can not survive an extended time under freezing temperatures. The higher the number frost days, the lower the transmission of the lumpy skin virus.
+
+---HOW TO IMPROVE
+Relocate to colder regions or install insect-protection.
+
+---FURTHER INFORMATION
+Coetzer, J.A.W. (2004). Infectious Diseases of Livestock. Cape Town: Oxford University Press. pp. 1268–1276
+
+______________________
+
+=======TEMPERATURE=======
+
+
+---MEANING
+Average daily minimun, mean and maximun temperature in Celsius.
+
+---INTERPRETATION
+The prevalence of lumpy skin disease is higly associated with the temperature. Outrbreaks are associated with high temperatures, while colder temperatures hinder its transmission. Given this, the higher this three coefficients are, the higher the possibility of lumpy skin disease infection.
+
+---HOW TO IMPROVE
+Consider relocating to colder climates.
+
+---FURTHER INFORMATION
+Yeruham, I; Nir, O; Braverman, Y; Davidson, M; Grinstein, H; Haymovitch, M; Zamir, O (22 July 1995). Spread of Lumpy Skin Disease in Israeli Dairy Herds. The Veterinary Record. 137–4 (4): 91–93. doi:10.1136/vr.137.4.91. PMID 8533249. S2CID 23409535.
+
+______________________
+
+=======VAPOUR PRESSURE=======
+
+
+---MEANING
+Mean vapour pressure in millibars.
+
+---INTERPRETATION
+Vapour pressure is and indicator of air saturation (quantity of water air holds). Vapour pressure around 20 or higher is considered high humidity is a predictor of lumpy skin disease.
+
+---HOW TO IMPROVE
+Consider relocating to more arid climates.
+
+---FURTHER INFORMATION
+Coetzer, J.A.W. (2004). Infectious Diseases of Livestock. Cape Town: Oxford University Press. pp. 1268–1276.
+
+______________________
+
+=======WETNESS=======
+
+
+---MEANING
+Average number of days per month with presence of rain.
+
+---INTERPRETATION
+Outbreaks of lumpy skin disease are dependent upon animal, wind, and rainfall patterns, which affect the vector (moskitoes etc) populations. The increase in number of rainy days per month is positively correlated with the spread of lumpy skin disease.
+
+---HOW TO IMPROVE
+Keep tabs on vector populations and take steps to reduce or protect from them in rainy seasons.
+
+---FURTHER INFORMATION
+http://www.oie.int/fileadmin/Home/eng/Health_standards/tahm/2.04.13_LSD.pdf
+
+______________________
+
+=======MOST DOMINANT LAND COVER=======
+
+
+---MEANING
+Category of most dominant land cover around the given case. Forest, Agriculture, Desert, Shrubs, Grassland, Built-up area, Wetlands, Rainforest, Barren land, Ice/Snow, and Inland water.
+
+---INTERPRETATION
+Lumpy skin disease infections occur within specific geographic distributions. It is most prominent in tropical, low-lying areas or near bodies of water.
+
+---HOW TO IMPROVE
+Relocate to a non-tropical region away from bodies of water.
+
+---FURTHER INFORMATION
+Tulman, E. R.; Afonso, C. L.; Lu, Z.; Zsak, L.; Kutish, G. F.; Rock, D. L. (1 August 2001). Genome of Lumpy Skin Disease Virus. Journal of Virology. 75 (15): 7122–7130. doi:10.1128/JVI.75.15.7122-7130.2001. ISSN 0022-538X. PMC 114441. PMID 11435593
+
+______________________

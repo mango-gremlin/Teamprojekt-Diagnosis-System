@@ -1,0 +1,56 @@
+DIAGNOSIS
+diabetes
+
+INPUT CONFIGURATION
+Pregnancies: 15
+Glucose: 30
+BloodPressure: 12
+SkinThickness: 4
+Insulin: 50
+BMI: 30
+Age: 15
+
+Your unhealthy values:
+Pregnancies
+BMI
+
+ADDITIONAL INFORMATION/PRECAUTIONS
+
+=======PREGNANCIES=======
+
+
+---MEANING
+Number of times pregnant (applies to females only).
+
+---INTERPRETATION
+During pregnancy there is a 2-10% chance for a woman to develop gestational diabetes. It is caused by the body not being able to produce enough insulin during pregnancy, since body changes during pregnancy can lead to insulin resistance (which leads to higher insulin demand). Women are even more likely to get gestational diabetes if they already had an insulin resistance before the pregnancy.
+
+---HOW TO IMPROVE
+Before getting pregnant, one way to prevent gestational diabetes is losing weight if one is overweight, and regular physical activity. (do not try to lose weight while pregnant)
+To help prevent during pregnancy: Checking blood sugar levels regularly, eating healthy foods (not too much, not too little), regular physical activity, and going to the doctor often to monitor the baby.
+
+---FURTHER INFORMATION
+https://www.cdc.gov/diabetes/basics/gestational.html
+
+______________________
+
+=======BMI=======
+
+
+---MEANING
+Body Mass Index (BMI) is a measure of body fat based on height and weight.
+
+---INTERPRETATION
+BMI below 18.5: Underweight - Underweight individuals may have a higher risk of nutritional deficiencies and other health issues.
+BMI between 18.5 and 24.9: Healthy Weight
+BMI between 25 and 29.9: Overweight - Overweight individuals have an increased risk of type 2 diabetes.
+BMI of 30 and above: Obesity - Obesity is a significant risk factor for type 2 diabetes.
+
+---HOW TO IMPROVE
+Aim for a healthy weight by adopting a balanced diet and controlling portion sizes. Engage in regular physical activity to help manage weight and improve insulin sensitivity.
+Seek support from healthcare professionals or a registered dietitian to create a personalized weight management plan.
+
+---FURTHER INFORMATION
+https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0229716
+
+______________________

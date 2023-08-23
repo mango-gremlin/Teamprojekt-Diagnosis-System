@@ -1,0 +1,53 @@
+DIAGNOSIS
+no heart disease
+
+INPUT CONFIGURATION
+age: 25
+sex: 1
+cp: 0
+trestbps: 60
+chol: 100
+fbs: false
+restecg: 1
+thalach: 80
+exang: false
+oldpeak: 5
+slope: 1
+ca: 3
+thal: 2
+HighBP: false
+HighChol: false
+BMI: 20
+Smoker: false
+Stroke: false
+Diabetes: 0
+PhysActivity: true
+HvyAlcoholConsump: false
+GenHlth: 1
+MentHlth: 0
+PhysHlth: 0
+DiffWalk: false
+Sex: 1
+Age: 2
+
+Your unhealthy values:
+MentHlth
+
+ADDITIONAL INFORMATION/PRECAUTIONS
+
+=======SEX OF PERSON (MALE/FEMALE)=======
+
+
+---MEANING
+sex of person (male/female)
+
+---INTERPRETATION
+Men have a greater risk to suffer from heart attacks than women, and a greater risk of having a heart attack at a younger age than women do. Women have a higher risk for heart attack at a later age than men.
+
+---HOW TO IMPROVE
+
+
+---FURTHER INFORMATION
+https://memorialhermann.org/services/specialties/heart-and-vascular/healthy-living/education/heart-disease-and-age
+
+______________________
