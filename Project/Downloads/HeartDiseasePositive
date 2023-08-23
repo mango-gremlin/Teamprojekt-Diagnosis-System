@@ -1,0 +1,309 @@
+DIAGNOSIS
+heart disease
+
+INPUT CONFIGURATION
+age: 15
+sex: 1
+cp: 2
+trestbps: 0
+chol: 0
+fbs: false
+restecg: 1
+thalach: 0
+exang: false
+oldpeak: 0
+slope: 1
+ca: 0
+thal: 2
+HighBP: true
+HighChol: true
+BMI: 30
+Smoker: true
+Stroke: true
+Diabetes: 2
+PhysActivity: false
+HvyAlcoholConsump: true
+GenHlth: 5
+MentHlth: 10
+PhysHlth: 15
+DiffWalk: true
+Sex: 1
+Age: 14
+
+Your unhealthy values:
+age
+thalach
+oldpeak
+ca
+thal
+HighBP
+HighChol
+BMI
+Smoker
+Stroke
+Diabetes
+PhysActivity
+HvyAlcoholConsump
+MentHlth
+
+ADDITIONAL INFORMATION/PRECAUTIONS
+
+=======CHEST PAIN TYPE=======
+
+
+---MEANING
+Angina is pain that comes from reduced blood flow to the heart, can be a sign of heart disease. Can be in different places, not only in chest. Can present in the lead-up to a heart attack.
+
+---INTERPRETATION
+Atypical Angina - chest discomfort, more like an indigestion feeling (women have this)
+non-anginal - chest pain that is non-anginal, and that may not be connected to heart disease or heart attack
+typical angina = reduced blood flow to the heart, tightness/heaviness in chest (the type of chest pain men have)
+In the lead-up to a heart attack, men usually have typical angina (chest pain) - women have atypical angina where there is no strong chest pain per se but discomfort, fatigue, shortness of breath. Angina is most common in people 60 years of age or older.
+
+---HOW TO IMPROVE
+Less tobacco/alcohol, lower blood pressure, lower cholesterol, more exercise, less stress and warmer temperatures.
+
+---FURTHER INFORMATION
+https://www.harringtonhospital.org/typical-and-atypical-angina-what-to-look-for/
+https://www.bhf.org.uk/informationsupport/conditions/angina
+https://www.mayoclinic.org/diseases-conditions/angina/symptoms-causes/syc-20369373
+
+______________________
+
+=======ST DEPRESSION INDUCED BY EXERCISE RELATIVE TO REST=======
+
+
+---MEANING
+The ST refers to the ST segment on an ECG plot. When exercising, the ST segment of a ECG can change relative to the ST segment during rest, which can be an indicator for heart disease.
+
+---INTERPRETATION
+An abnormal ST depression is characterised by an upsloping, horizontal or downsloping depression. The duration is also important. For more info see slope.
+
+---HOW TO IMPROVE
+Can be improved by exercise, or heart disease medication.
+
+---FURTHER INFORMATION
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4958709/
+
+______________________
+
+=======NUMBER OF MAJOR VESSELS COLORED BY FLUOROSCOPY=======
+
+
+---MEANING
+A catheter is inserted into an artery of the heart, then a fluorescent dye is inserted through the catheter, which is used to colour major vessels. This can then be seen with an X-Ray.
+The number of vessels coloured by the dye can give information on the quality of blood flow.
+
+---INTERPRETATION
+The more major blood vessels coloured by fluoroscopy, the better the blood flow, the lower the risk for heart disease. If the number of coloured vessels is low, your blood flow may be impaired, which can increase risk for heart disease and heart attacks.
+
+---HOW TO IMPROVE
+
+
+---FURTHER INFORMATION
+https://www.cdc.gov/nceh/radiation/fluoroscopy.html
+
+______________________
+
+=======BODY MASS INDEX=======
+
+
+---MEANING
+Body Mass Index, or BMI is calculated by dividing weight in kg by height squared in m: weight/ (height^2)
+
+---INTERPRETATION
+healthy: 18.5 - 25, overweight: 25 - 30, obese: >30, underweight: <18.5
+In general a higher BMI is linked to a higher risk of developing a range of conditions like diabetes, arthritis, liver disease, cancer, high blood pressure, high cholesterol, sleep apnea.
+Current BMI definitions of overweight or obesity were based largely on white populations. Yet body composition, including percent body fat or amount of muscle mass, can vary by race and ethnic group.
+
+---HOW TO IMPROVE
+Losing or gaining weight.
+It is important to keep in mind, that the BMI doesn't differentiate between the weight of fat or the weight of muscles. BMI may be particularly unreliable during pregnancy, for athletes, and the elderly.
+
+---FURTHER INFORMATION
+https://www.health.harvard.edu/blog/how-useful-is-the-body-mass-index-bmi-201603309339
+https://www.nhs.uk/live-well/healthy-weight/bmi-calculator/
+
+______________________
+
+=======SMOKED AT LEAST 100 CIGARETTES=======
+
+
+---MEANING
+Have you smoked at least 100 cigarettes in your entire life? (Note: 5 packs = 100 cigarettes)
+
+---INTERPRETATION
+Smokers are more likely than non-smokers to develop heart disease, stroke and lung cancer. Smokers are at greater risk for diseases that affect the heart and blood vessels (cardiovascular disease).
+
+---HOW TO IMPROVE
+Reduce or quit smoking: Quitting smoking is one of the most important actions people can take to improve their health. This is true regardless of their age or how long they have been smoking.
+
+---FURTHER INFORMATION
+https://www.cdc.gov/tobacco/data_statistics/fact_sheets/health_effects/effects_cig_smoking/index.htm
+
+______________________
+
+=======EVER HAD A STROKE=======
+
+
+---MEANING
+A stroke is a serious life-threatening medical condition that happens when the blood supply to part of the brain is cut off.
+
+---INTERPRETATION
+If the supply of blood to the brain is restricted or stopped, brain cells begin to die. This can lead to brain injury, disability and possibly death. People who survive a stroke are often left with long-term problems caused by injury to their brain.
+Women and men have a much higher risk of dangerous heart problems soon after their first stroke compared to people without stroke, even if they don't have obvious underlying heart disease, a study has found.
+
+---HOW TO IMPROVE
+You can significantly reduce your risk of having a stroke if you: eat well, take regular exercise, don't drink alcohol, don't smoke.
+If you've had a stroke in the past, these measures are particularly important because your risk of having another stroke is greatly increased.
+
+---FURTHER INFORMATION
+https://www.ahajournals.org/doi/full/10.1161/STROKEAHA.119.028066
+https://www.nhs.uk/conditions/stroke/
+
+______________________
+
+=======DIABETES DIAGNOSIS=======
+
+
+---MEANING
+Diabetes is a disease where a person's body has trouble producing insulin, resulting in too much sugar building up in the blood stream.
+
+---INTERPRETATION
+Having diabetes means you are more likely to develop heart disease. People with diabetes are also more likely to have certain risk factors, such as high blood pressure or high cholesterol, that increase their chances of having a heart attack or a stroke.
+High blood glucose from diabetes can damage your blood vessels and the nerves that control your heart and blood vessels. Over time, this damage can lead to heart disease. People with diabetes tend to develop heart disease at a younger age than people without diabetes. Adults with diabetes are nearly twice as likely to have heart disease or stroke as adults without diabetes.
+
+---HOW TO IMPROVE
+The steps you take to manage your diabetes also help lower your chances of having heart disease or stroke:
+Follow a healthy eating plan, make physical activity part of your routine, star at or get to a healthy weight, get enough sleep and quit smoking.
+
+---FURTHER INFORMATION
+https://www.cdc.gov/chronicdisease/resources/publications/factsheets/heart-disease-stroke.htm
+https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-problems/heart-disease-stroke
+
+______________________
+
+=======PHYSICAL ACTIVITY/EXERCISE IN THE PAST 30 DAYS=======
+
+
+---MEANING
+Adults who reported doing physical activity or exercise during the past 30 days other than their regular job.
+
+---INTERPRETATION
+Physical activity lowers your risk for many diseases, such as coronary heart disease, diabetes, and cancer. Inactive people are more likely to develop heart disease than people who are physically active. Studies suggest that inactivity is a major risk factor for heart disease, just like high blood pressure, high blood cholesterol, and smoking.
+
+---HOW TO IMPROVE
+Reduce time sitting and increase time moving.
+Make physical activity part of your daily or weekly routine.
+Take up a sport, alone or in a group.
+
+---FURTHER INFORMATION
+https://www.nhlbi.nih.gov/health/heart/physical-activity/benefits
+https://www.cdc.gov/healthyweight/physical_activity/getting_started.html
+
+______________________
+
+=======HEAVY ALCOHOL CONSUMPTION=======
+
+
+---MEANING
+Alcohol is poisonous to the body and needs to be metabolised by the liver. Heavy alcohol consumption, as with any heavy substance abuse, can have adverse health effects.
+
+---INTERPRETATION
+Heavy drinking, on the other hand, is linked to a number of poor health outcomes, including heart conditions. Excessive alcohol intake can lead to high blood pressure, heart failure or stroke. Excessive drinking can also contribute to cardiomyopathy, a disorder that affects the heart muscle.
+Light-to-moderate drinking (1 to 14 drinks/week) is associated with a significant reduction in progressive heart failure and hospitalization. However, there were no positive effects in subjects with mechanical or electrical dysfunction of heart muscle, or nonischemic heart disease, and although not significant, there was a slight risk for hospitalization for heart failure.
+
+---HOW TO IMPROVE
+Reduce the amount of drinks you have in a week to less than 14 for men, 7 for women. (1 drink= 355 ml beer / 118 ml wine / 44 ml spirits)
+If you have certain heart rhythm abnormalities or heart failure, you should avoid even that much or not drink at all.
+
+---FURTHER INFORMATION
+https://www.hopkinsmedicine.org/health/wellness-and-prevention/alcohol-and-heart-health-separating-fact-from-fiction
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5513687/
+
+______________________
+
+=======GENERAL HEALTH=======
+
+
+---MEANING
+General health can mean anything from physical to mental health.
+
+---INTERPRETATION
+Poor general health may indicate heart disease as a cause.
+
+---HOW TO IMPROVE
+Find out the cause of poor health can help improve it.
+
+---FURTHER INFORMATION
+
+
+______________________
+
+=======MENTAL HEALTH=======
+
+
+---MEANING
+Mental health includes stress, depression, and problems with emotions
+
+---INTERPRETATION
+A higher prevalence of mental diseases in CHD (Coronary Heart Disease) patients has been demonstrated. Conversely, people suffering from a mental disease seem to have an increased risk of CHD. Moreover, common pathophysiological mechanisms may link both diseases.
+
+---HOW TO IMPROVE
+As poor mental health may be connected with poor physical health, improving mental health could lead to better overall health outcomes. Consider talking to a friend or finding a therapist.
+
+---FURTHER INFORMATION
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6016051/
+
+______________________
+
+=======PHYSICAL HEALTH=======
+
+
+---MEANING
+Physical health includes physical illness and injury.
+
+---INTERPRETATION
+A low physical health is strongly and significantly associated with the incidence of all major types of coronary heart disease.
+
+---HOW TO IMPROVE
+How to improve poor physical health depends on the cause of said physical health.
+
+---FURTHER INFORMATION
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6041849/
+
+______________________
+
+=======DIFFICULTY WALKING OR CLIMBING STAIRS=======
+
+
+---MEANING
+Difficulty walking or climbing stairs.
+
+---INTERPRETATION
+The more risk factors people have for heart disease, the faster their decline in walking speed.
+
+---HOW TO IMPROVE
+As difficulty walking is connected to risk factors for heart disease, treating the underlying causes can improve difficulty walking.
+
+---FURTHER INFORMATION
+https://www.medindia.net/news/walking-difficulties-linked-with-heart-disease-risk-factors-174860-1.htm
+
+______________________
+
+=======SEX OF PERSON (MALE/FEMALE)=======
+
+
+---MEANING
+sex of person (male/female)
+
+---INTERPRETATION
+Men have a greater risk to suffer from heart attacks than women, and a greater risk of having a heart attack at a younger age than women do. Women have a higher risk for heart attack at a later age than men.
+
+---HOW TO IMPROVE
+
+
+---FURTHER INFORMATION
+https://memorialhermann.org/services/specialties/heart-and-vascular/healthy-living/education/heart-disease-and-age
+
+______________________
