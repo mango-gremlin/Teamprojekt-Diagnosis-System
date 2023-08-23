@@ -40,8 +40,7 @@ The base folder of the program is 'Project' or alternative (but not preferred) '
  !! Note: More details about the program are below or in additional ReadME (linked) files !! 
 
 ## Project Structure
-![Project Structure2](https://github.com/mango-gremlin/Teamprojekt-Diagnosis-System/assets/104830903/30f4d4cb-bc31-4e6b-bbd0-fec8d26547d3)
-
+![Project Structure3](https://github.com/mango-gremlin/Teamprojekt-Diagnosis-System/assets/104830903/e35a202f-5c93-4f6e-afcd-099c3fc67559)
 
 ## Diseases and Datasets used
 #### Dataset General
