@@ -17,7 +17,7 @@ classdef HeartDiseaseCommunicator
     % - getUnhealthyValues: according to average healthy values &
     % literature, assesses which input values can be classified as
     % unhealthy
-    
+
     methods(Static)
         
         function outputArg = returnPrediction(input_joint, input_tidy)
@@ -105,14 +105,16 @@ classdef HeartDiseaseCommunicator
             %
             % Arguments:
             % - input from GUI (table)
+            [unhealthy, categories] = HeartDiseaseCommunicator.getUnhealthyValues(input_joint, input_tidy)
 
-            outputArg = SuperCommunicator.returnInfo(['Project' filesep 'ML' filesep 'Heart Disease' filesep 'Health_Information' filesep 'heart_infotext.csv'], HeartDiseaseCommunicator.getUnhealthyValues(input_joint, input_tidy));
+            outputArg = SuperCommunicator.returnInfo(['Project' filesep 'ML' filesep 'Heart Disease' filesep 'Health_Information' filesep 'heart_infotext.csv'], unhealthy);
         end
 
-        function outputArg = getUnhealthyValues(input_joint, input_tidy)
+        function [unhealthy, categories] = getUnhealthyValues(input_joint, input_tidy)
             % GETUNHEALTHYVALUES checks for each input value whether is is healthy
             % and save info on what values are unhealthy & how to change
-            % them in an output table and returns this table
+            % them in an output table and return this table
+            % also returns the unhealthy categories
             %
             % Arguments:
             % - input from GUI (table)
@@ -127,11 +129,16 @@ classdef HeartDiseaseCommunicator
             % 
             inputJointRows = 13;
             
-            % create a new table that saves whether values were unhealthy
+            % create a new array that saves whether values were unhealthy
             % (TRUE) or healthy (FALSE)
             % the row numbers reflect those in the healthyAvg and
             % HealthInfo Tables
             unhealthyValues = zeros(1,24);
+
+            % for the output of which values were unhealthy, we need
+            % another array where the indices correspond to the indices in
+            % the actual input
+            unhealthyCategories = zeros(width(input_joint)+width(input_tidy),0);
 
             % INPUT JOINT 
             %ignore age here because age here & in input tidy should be the
@@ -144,6 +151,7 @@ classdef HeartDiseaseCommunicator
                     case {3, 6, 9}
                         if(input_joint.(row) ~= 0)
                             unhealthyValues(row-2) = true;
+                            unhealthyCategories(row) = true;
                         end
                     % 4: resting blood pressure
                     % 5: serum cholesterol
@@ -152,12 +160,14 @@ classdef HeartDiseaseCommunicator
                     case {4, 5, 8}
                         if(healthyAvg.healthyAvg(row-2) <= input_joint.(row))
                             unhealthyValues(row-2) = true;
+                            unhealthyCategories(row) = true;
                         end 
                     % 7: resting electrocardiographic results: 1 is normal
                     % 11: slope of ST segment: 1 is flat
                     case {7, 11}
                         if(input_joint.(row) ~= 1)
                             unhealthyValues(row-2) = true;
+                            unhealthyCategories(row) = true;
                         end
                     % 10: st depression (oldpeak)
                     % 12: number of vessels coloured (blood flow)
@@ -165,11 +175,13 @@ classdef HeartDiseaseCommunicator
                     case {10,12}
                         if(healthyAvg.healthyAvg(row-2) >= input_joint.(row))
                             unhealthyValues(row-2) = true;
+                            unhealthyCategories(row) = true;
                         end 
                     % 13: thalassemia trait: 2 is normal
                     case 13
                         if(input_joint.(row) ~= 2)
                             unhealthyValues(row-2) = true;
+                            unhealthyCategories(row) = true;
                         end
                    end
             end 
@@ -189,16 +201,21 @@ classdef HeartDiseaseCommunicator
                     % factors for all sexes.
                     case 13
                         unhealthyValues(23) = true;
+                        unhealthyCategories(row+13) = true;
+                        unhealthyCategories(2) = true;
                     % 14: age: risk for > 45
                     case 14 
                         if (input_tidy.(row) >= 45)
                             unhealthyValues(22) = true;
+                            unhealthyCategories(row+13) = true;
+                            unhealthyCategories(1) = true;
                         end 
                     % 3: BMI
                     % higher than 25 = unhealthy
                     case 3
                         if (input_tidy.(row) >= 25)
                             unhealthyValues(row+9) = true;
+                            unhealthyCategories(row+13) = true;
                         end
                     % 4: Smoker
                     % 5: Stroke
@@ -209,18 +226,21 @@ classdef HeartDiseaseCommunicator
                     case {4, 5, 6, 8, 12}
                         if (input_tidy.(row) ~= 0)
                             unhealthyValues(row+9) = true;
+                            unhealthyCategories(row+13) = true;
                         end
                     % 7: Physical Activity
                     % 0 = unhealthy
                     case 7
                         if (input_tidy.(row) ~= 1)
                             unhealthyValues(row+9) = true;
+                            unhealthyCategories(row+13) = true;
                         end
                     % 9: General Health
                     % above 3 = unhealthy
                     case 9 
                         if (input_tidy.(row) >= 3)
                             unhealthyValues(row+9) = true;
+                            unhealthyCategories(row+13) = true;
                         end
                     % 10: Mental Health
                     % 11: Physical Health
@@ -228,12 +248,16 @@ classdef HeartDiseaseCommunicator
                     case {10, 11} 
                         if (input_tidy.(row) >= 1)
                             unhealthyValues(row+9) = true;
+                            unhealthyCategories(row+13) = true;
                         end
                     end
             end
            
-            outputArg = unhealthyValues;
+            unhealthy = unhealthyValues;
+            categories = unhealthyCategories;
         end 
 
     end
 end
+
+
