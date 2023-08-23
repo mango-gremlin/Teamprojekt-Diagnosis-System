@@ -19,25 +19,25 @@ This program is supposed to be a supportive tool to diagnose diseases. In Theory
 The Program was made with matlab Simulink and the matlab App Designer.
 
 ## How to use the program
-The base folder of the program is 'Project' or alternative (but not preferred) 'Teamprojekt-Diagnose-System'
- The program should be access through matlab. When the program is opened, the current folder should be either 
- 1. 'Teamprojekt-Diagnose-System' 
+The base folder of the program is 'Project' or alternative (but not preferred) 'Teamprojekt-Diagnosis-System'
+ The program should be accessed through matlab. When the program is opened, the current folder should be either 
+ 1. 'Teamprojekt-Diagnosis-System' 
  2. 'Project' (*preferred*)
  3. subfolder of the above <br> 
  <br>
  !!! DO NOT OPEN THE 'startUpApp.mlapp' from a parent folder of 'Teamprojekt-Diagnose-System' !!! <br>
-(nothing bad will happend, but the program will not work)
+(nothing bad will happen, but the program will not work)
  <br>
  <br>
- The program can be exeuted by  <br>
- 1. opening the StartUpApp.mlapp in the Project/GUI/approach2 folder (*Preferred*) <br>
- 2. by opening Skin/General/Diabetes/HeartApp.mlapp (!not PredictionsApp.mlapp). <br>
+ The program can be executed by  <br>
+ 1. opening the StartUpApp.mlapp in the 'Project' folder (*Preferred*) <br>
+ 2. by opening SkinApp.mlapp, GeneralApp.mlapp, Diabetes.mlapp, or HeartApp.mlapp in the 'Project/GUI' folder (!not PredictionsApp.mlapp). <br>
  <br>
- !! Note: If the programm is opening in the second way, the necessary folder may not be added to the path and this has to be done manuelly (rightclick 'Project' -> Add to path -> Selected folders and subfolders)!!  <br>
+ !! Note: If the programm is openened using approach 2, the necessary folder may not be added to the path and this has to be done manually (rightclick 'Project' -> Add to path -> Selected folders and subfolders)!!  <br>
  <br>
  If a diagnosis is saved, a file will be created in 'Project/Downloads'  <br>
  <br>
- !! Note: More details about the program are below or in additional ReadME files !! 
+ !! Note: More details about the program are below or in additional ReadME (linked) files !! 
 
 ## Diseases and Datasets used
 #### Dataset General
