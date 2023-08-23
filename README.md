@@ -39,6 +39,9 @@ The base folder of the program is 'Project' or alternative (but not preferred) '
  <br>
  !! Note: More details about the program are below or in additional ReadME (linked) files !! 
 
+## Project Structure
+![Project Structure3](https://github.com/mango-gremlin/Teamprojekt-Diagnosis-System/assets/104830903/e35a202f-5c93-4f6e-afcd-099c3fc67559)
+
 ## Diseases and Datasets used
 #### Dataset General
 Contains symptoms for a list of diseases. The patient or doctor can choose symptoms out of the provided list and the model outputs which disease the symptoms match the most according to the training data.
