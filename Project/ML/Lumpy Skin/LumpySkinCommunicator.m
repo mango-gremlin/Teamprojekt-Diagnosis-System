@@ -48,13 +48,18 @@ classdef LumpySkinCommunicator
             % Arguments:
             % - input from GUI (table)
 
-            outputArg = SuperCommunicator.returnInfo(['Project' filesep 'ML' filesep 'Lumpy Skin' filesep 'Health_Information' filesep 'lumpyskin_infotext.csv'], LumpySkinCommunicator.getUnhealthyValues(input));
+            [unhealthy, categories] = LumpySkinCommunicator.getUnhealthyValues(input);
+
+            outputArg = SuperCommunicator.returnInfo(['Project' filesep 'ML' filesep 'Lumpy Skin' filesep 'Health_Information' filesep 'lumpyskin_infotext.csv'], unhealthy);
         end
 
-        function outputArg = getUnhealthyValues(input)
+        function [unhealthy, categories] = getUnhealthyValues(input)
             % GETUNHEALTHYVALUES checks for each input value whether is is healthy
             % and save info on what values are unhealthy & how to change
             % them in an output table and returns this table
+            % also saves the categories that were unhealthy (since the
+            % indices were shifted between the input and the info text
+            % tables)
             %
             % Arguments:
             % - input from GUI (table)
@@ -81,8 +86,13 @@ classdef LumpySkinCommunicator
             % later
             unhealthyValues = zeros(1,8);
 
-            %ignore age here because age here & in input tidy should be the
-            %same
+            % for the output of which values were unhealthy, we need
+            % another array where the indices correspond to the indices in
+            % the actual input
+            unhealthyCategories = zeros(1,11);
+
+            %input for the categories needs to be shifted again since input
+            %order was changed
             for row = 1:inputRows
                 switch row 
                     % 1: Latitude
@@ -90,6 +100,8 @@ classdef LumpySkinCommunicator
                     % count as 1 in unhealthyValues, include every lat/long
                     case {1,2}
                             unhealthyValues(1) = true;
+                            unhealthyCategories(10) = true;
+                            unhealthyCategories(11) = true;
                     % 3: Cloud Cover
                     % 5: Precipitation
                     % 9: Vapour Pressure
@@ -102,27 +114,38 @@ classdef LumpySkinCommunicator
                             else
                                 unhealthyValues(row-1) = true;
                             end 
+                            %not elegant, but solves index-shifting:
+                            switch row
+                                case 3
+                                    unhealthyCategories(1)=true;
+                                case {5,9, 10}
+                                    unhealthyCategories(row-1)=true;
+                            end
                         end 
                     % 4: Frost
                     % lower than average = unhealthy
                     case 4
                         if(healthyAvg.healthyAvg(row) >= input.(row))
                             unhealthyValues(row-1) = true;
+                            unhealthyCategories(3)=true;
                         end 
                     % 6, 7, 8: Temperature min, mean, max
                     % higher than average = unhealthy
                     case {6, 7, 8}
                         if(healthyAvg.healthyAvg(row) <= input.(row))
                             unhealthyValues(5) = true; % because temp is overall only 1 row in the text table
+                            unhealthyCategories(row-1) = true;
                         end
                     % 11: Dominant Land Cover
                     % always true
                     case 11
                         unhealthyValues(8) = true;
+                        unhealthyCategories(2)=true;
                  end
             end 
        
-            outputArg = unhealthyValues;
+            unhealthy = unhealthyValues;
+            categories = unhealthyCategories;
         end 
 
     end
