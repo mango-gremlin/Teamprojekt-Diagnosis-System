@@ -11,9 +11,6 @@ Development of a supportive diagnosis System with a GUI using machine learning.
 
 Betreuer: Wolfgang Fuhl
 
-## Trello: 
-https://trello.com/b/r5shBZAH/teamprojekt
-
 # Overview
 
 ## Motivation
@@ -44,17 +41,13 @@ https://www.kaggle.com/datasets/vikasukani/diabetes-data-set
 https://www.kaggle.com/datasets/jillanisofttech/diabetes-disease-updated-dataset
 
 #### Dataset Lumpy Skin
-TODO
+Contains different environmental factors that can lead to lumpy skin disease, which affects cattle. A cow or a veterinarian can input environmental factors such as latitude/longitude on a map, or cloud cover etc and get a prediction on how risky it is to develop lumpy skin disease.
 
 Source:
 https://www.kaggle.com/datasets/saurabhshahane/lumpy-skin-disease-dataset
 
 ## ML Models used
-We used Bagged Trees to predict diseases. More on that further down.
-
-## Useful links
-(links to the other readmes, etc)
-
+We used Bagged Trees to predict diseases. (see below) We created them using Matlab Simulink.
 
 # Machine Learning Models
 
@@ -69,7 +62,16 @@ Bagged trees are Decision trees that classify Data into categories. For Instance
 With Bagging, many datasets are generated out of the original dataset using the Bootstrap Method where datapoints are randomly chosen out of the original dataset (sampling with replacement) until the bootstrap dataset has as many datapoints as the original dataset - each bootstrap dataset contains data from the original, but may not contain all data from the original. The Result are many datasets that are similar to the original dataset, but not the same. On each of these bootstrapped datasets you train a decision tree. Finally you aggregate the trees by taking the average probability for each class.
 
 ## How we use the models
-(Reference to the other readmes here that are specific to the models)
+For each dataset we created a separate bagged tree model with Simulink which we can run predictions with. Heart Disease had two datasets, so it has two models.
+For each model we calculated accuracies and wrote detailed documentation, which can be found here:
+
+[Diabetes Readme](https://github.com/mango-gremlin/Teamprojekt-Diagnosis-System/blob/661b838a2e366d13daa1f77450b1affaa859c5b6/Project/ML/Diabetes/diabetesModelREADME.md)
+
+[Heart Disease Readme Dataset 1](https://github.com/mango-gremlin/Teamprojekt-Diagnosis-System/blob/661b838a2e366d13daa1f77450b1affaa859c5b6/Project/ML/Heart%20Disease/tidyHeartREADME.md) and [Heart Disease Readme Dataset 2](https://github.com/mango-gremlin/Teamprojekt-Diagnosis-System/blob/661b838a2e366d13daa1f77450b1affaa859c5b6/Project/ML/Heart%20Disease/jointHeartBaggedModelREADME.md)
+
+[Lumpy Skin Readme](https://github.com/mango-gremlin/Teamprojekt-Diagnosis-System/blob/661b838a2e366d13daa1f77450b1affaa859c5b6/Project/ML/Lumpy%20Skin/LumpySkinModelREADME.md)
+
+[General Readme](https://github.com/mango-gremlin/Teamprojekt-Diagnosis-System/blob/661b838a2e366d13daa1f77450b1affaa859c5b6/Project/ML/General/generalModelREADME.md)
 
 # GUI
 
@@ -83,3 +85,7 @@ For general we could simply use the different symptoms that can then be selected
 For diabetes, heart disease and lumpy skin we use a mixture of edit fields, drop-downs, checkboxes and spinners based on what would be the most intuitive for the user experience.
 The results will then be forwarded to the prediction app and presented there. 
 It displays the diagnosis, which values can be considered unhealthy, and further information on what precautions to take. There is also a button to save these results and download them as a text file.
+
+# Research and Health Info
+The program also outputs information on which input values could be unhealthy and how to change that. The health information is saved in a csv table. This makes the prediction a bit more useful, since one can understand which input values led to the prediction in the first place, making it possible to selectively improve values that could have led to bad health.
+Additionally, to make it even easier to see what was unhealthy, the output also includes the input values as well as a list of which input values were classified as unhealthy.
