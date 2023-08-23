@@ -1,5 +1,5 @@
 classdef DiabetesCommunicator
-    %DIABETESCOMMUNICATOR Summary of this class goes here
+    %DIABETESCOMMUNICATOR 
     %   takes the input from gui
     %   loads diabetes model
     %   predicts with model
@@ -8,13 +8,27 @@ classdef DiabetesCommunicator
     %   furthermore: 
     %   compares input to healthy values, and gives info text on unhealthy
     %   values.
+    % contians the functions:
+    % - returnPrediction: returns a prediction of diabetes outcome on the
+    % input values
+    % - returnInfo: calls the supercommunicator returnInfo function using
+    % the diabetes info table and diabetes unhealthy values function as
+    % input
+    % - getUnhealthyValues: according to average healthy values &
+    % literature, assesses which input values can be classified as
+    % unhealthy
 
         
     methods(Static)
                
         function outputArg = returnPrediction(input)
-            %METHOD1 Summary of this method goes here
-            %   Detailed explanation goes here
+            % RETURN PREDICTION loads the diabetes model and uses the input
+            % to make a prediction on diabetes outcome, which is outputted
+            % as a string
+            %
+            % Arguments:
+            % - input from GUI (table)
+
             load(['Project' filesep 'ML' filesep 'Diabetes' filesep 'diabetesBaggedTreeModel.mat']);
             model = diabetesBaggedTreeModel;
             prediction = model.predictFcn(input);
@@ -28,6 +42,13 @@ classdef DiabetesCommunicator
         end
 
         function outputArg = returnInfo(input)
+            % RETURN INFO loads the supercommunicator return info function
+            % with diabetes health info table and diabetes unhealthy values
+            % function as input
+            %
+            % Arguments:
+            % - input from GUI (table)
+
             outputArg = SuperCommunicator.returnInfo(['Project' filesep 'ML' filesep 'Diabetes' filesep 'Health_Information' filesep 'diabetes_infotext.csv'], DiabetesCommunicator.getUnhealthyValues(input));
         end
 
@@ -35,6 +56,9 @@ classdef DiabetesCommunicator
             % GETUNHEALTHYVALUES checks for each input value whether is is healthy
             % and save info on what values are unhealthy & how to change
             % them in an output table and returns this table
+            %
+            % Arguments:
+            % - input from GUI (table)
 
             % read in table of healthy values
             healthyAvg = readtable(['Project' filesep 'ML' filesep 'Diabetes' filesep 'Health_Information' filesep 'diabetes_averageHealthyValues.csv']);

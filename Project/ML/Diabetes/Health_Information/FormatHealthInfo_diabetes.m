@@ -1,5 +1,5 @@
 %% Idea:
-% make a big table with the different values.
+% make a big table with the average healthy values for each category.
 % each row is a type of symptom/value
 % colnames:     (shortened) name in the original dataset (col names)
 % healthyAvg:   average of what healthy people have in this value
@@ -14,7 +14,6 @@ colnames = ["Pregnancies",
     "Age"];
 
 % array with average healthy values
-% array with healthy average values
 datadiabetes = readtable(['Project' filesep 'ML' filesep 'Diabetes' filesep 'Datasets' filesep 'diabetes-dataset-full.csv']);
 
 healthyAvg = zeros(1,8);
@@ -50,7 +49,7 @@ end
 sumOfHealthyValues;
 healthyAvg;
 
-% remove diabetes pedigree function
+% remove diabetes pedigree function since it is not in the model
 healthyAvg(7) = [];
 
 healthyAvg = healthyAvg';

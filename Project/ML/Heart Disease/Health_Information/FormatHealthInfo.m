@@ -2,7 +2,7 @@
 % make a big table with the different values.
 % each row is a type of symptom/value
 % colnames:     (shortened) name in the original dataset (col names)
-% fullnames:    long name that is understandableslope of the peak exercise ST segment
+% fullnames:    long name that is understandable
 % healthyAvg:   average of what healthy people have in this value
 % Info:         additional info on the type of value
 

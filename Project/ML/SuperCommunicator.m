@@ -1,6 +1,13 @@
 classdef SuperCommunicator
     %SUPERCOMMUNICATOR 
-    % superclass for the other communicators
+    % contains functions that are exactly the same across all communicators
+    % contains the functions:
+    %  - returnInfo: for each unhealthy value prints the respective health
+    %  information into the output array
+    %  - inputToStringArray: transforms input from GUI into string array 
+    %  - printUnhealthyCategories: prints all categories that were
+    %  classified as unhealthy in the input
+    %  - saveDiagnosis: saves diagnosis as a file
     
        
     methods(Static)
@@ -10,6 +17,12 @@ classdef SuperCommunicator
             % RETURNINFO returns which values are
             % unhealthy and information about these values as strings
             % together in a big string array.
+            %
+            % Arguments:
+            % - infoTablePath: the filepath of the table with the health
+            % info text
+            % - unhealthy: a boolean array containing a 1 at position i for unhealthy
+            % value at position i and a 0 for healthy
 
             % read in table of health info text
             % IMPORTANT: to preserve line breaks, when reading in:
@@ -17,9 +30,6 @@ classdef SuperCommunicator
             healthInfo = readtable(infoTablePath, opts);
 
             %healthInfo;
-
-            % find out which values are healthy and which are not
-            %unhealthy = DiabetesCommunicator.getUnhealthyValues(input);
 
             % for the unhealthy values add a string containing the info
             % text
@@ -56,6 +66,12 @@ classdef SuperCommunicator
         end
 
         function outputArg = inputToStringArray(input)
+            % INPUT TO STRING ARRAY returns the input that came from the
+            % GUI (table) as a string array with each element of the form
+            % "value name: input value"
+            %
+            % Arguments:
+            % - the input from the GUI as a table
 
             output = strings(width(input), 0);
 
@@ -69,6 +85,15 @@ classdef SuperCommunicator
         end
 
         function outputArg = printUnhealthyCategories(input, unhealthy)
+            % PRINT UNHEALTHY CATEGORIES returns the input value categories
+            % (e.g. blood pressure, insulin levels...) that were
+            % categorised as unhealthy as a string array
+            %
+            % Arguments:
+            % - input: input from the GUI as a table
+            % - unhealthy: a boolean array containing a 1 at position i for unhealthy
+            % value at position i and a 0 for healthy
+
             output = strings(sum(unhealthy, 'all'),0);
 
             values = input.Properties.VariableNames;

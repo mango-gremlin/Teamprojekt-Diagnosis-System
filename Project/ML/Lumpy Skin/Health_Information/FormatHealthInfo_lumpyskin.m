@@ -1,5 +1,5 @@
 %% Idea:
-% make a big table with the different values.
+% make a big table with the average healthy values.
 % each row is a type of symptom/value
 % colnames:     (shortened) name in the original dataset (col names)
 % healthyAvg:   average of what healthy people have in this value

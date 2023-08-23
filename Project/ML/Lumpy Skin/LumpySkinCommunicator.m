@@ -1,14 +1,34 @@
 classdef LumpySkinCommunicator
-    %   LumpySkinCommunicator
+    %   LUMPYSKINCOMMUNICATOR
     %   takes the input from gui
-    %   loads lumpy skin model
+    %   loads diabetes model
     %   predicts with model
     %   returns predicted value
+    %
+    %   furthermore: 
+    %   compares input to healthy values, and gives info text on unhealthy
+    %   values.
+    %
+    % contains the functions:
+    % - returnPrediction: returns a prediction of lumpy skin outcome on the
+    % input values
+    % - returnInfo: calls the supercommunicator returnInfo function using
+    % the lumpy skin info table and lumpy skin unhealthy values function as
+    % input
+    % - getUnhealthyValues: according to average healthy values &
+    % literature, assesses which input values can be classified as
+    % unhealthy
     
     methods(Static)
         
         function outputArg = returnPrediction(input)
-            % returns value of lumpy skin model
+            % RETURN PREDICTION loads the lumpy skin model and uses the input
+            % to make a prediction on lumpy skin outcome, which is outputted
+            % as a string
+            %
+            % Arguments:
+            % - input from GUI (table)
+
             load(['Project' filesep 'ML' filesep 'Lumpy Skin' filesep 'lumpySkinBaggedTreeModel.mat']);
             model = lumpySkinBaggedTree;
             prediction = model.predictFcn(input);
@@ -21,6 +41,13 @@ classdef LumpySkinCommunicator
         end
 
         function outputArg = returnInfo(input)
+             % RETURN INFO loads the supercommunicator return info function
+            % with lumpy skin health info table and lumpy skin unhealthy values
+            % function as input
+            %
+            % Arguments:
+            % - input from GUI (table)
+
             outputArg = SuperCommunicator.returnInfo(['Project' filesep 'ML' filesep 'Lumpy Skin' filesep 'Health_Information' filesep 'lumpyskin_infotext.csv'], LumpySkinCommunicator.getUnhealthyValues(input));
         end
 
@@ -28,6 +55,9 @@ classdef LumpySkinCommunicator
             % GETUNHEALTHYVALUES checks for each input value whether is is healthy
             % and save info on what values are unhealthy & how to change
             % them in an output table and returns this table
+            %
+            % Arguments:
+            % - input from GUI (table)
 
             % read in table of healthy values
             healthyAvg = readtable(['Project' filesep 'ML' filesep 'Lumpy Skin' filesep 'Health_Information' filesep 'lumpyskin_averageHealthyValues.csv']);
