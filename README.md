@@ -18,6 +18,27 @@ This program is supposed to be a supportive tool to diagnose diseases. In Theory
 
 The Program was made with matlab Simulink and the matlab App Designer.
 
+## How to use the program
+The base folder of the program is 'Project' or alternative (but not preferred) 'Teamprojekt-Diagnose-System'
+ The program should be access through matlab. When the program is opened, the current folder should be either 
+ 1. 'Teamprojekt-Diagnose-System' 
+ 2. 'Project' (*preferred*)
+ 3. subfolder of the above <br> 
+ <br>
+ !!! DO NOT OPEN THE 'startUpApp.mlapp' from a parent folder of 'Teamprojekt-Diagnose-System' !!! <br>
+(nothing bad will happend, but the program will not work)
+ <br>
+ <br>
+ The program can be exeuted by  <br>
+ 1. opening the StartUpApp.mlapp in the Project/GUI/approach2 folder (*Preferred*) <br>
+ 2. by opening Skin/General/Diabetes/HeartApp.mlapp (!not PredictionsApp.mlapp). <br>
+ <br>
+ !! Note: If the programm is opening in the second way, the necessary folder may not be added to the path and this has to be done manuelly (rightclick 'Project' -> Add to path -> Selected folders and subfolders)!!  <br>
+ <br>
+ If a diagnosis is saved, a file will be created in 'Project/Downloads'  <br>
+ <br>
+ !! Note: More details about the program are below or in additional ReadME files !! 
+
 ## Diseases and Datasets used
 #### Dataset General
 Contains symptoms for a list of diseases. The patient or doctor can choose symptoms out of the provided list and the model outputs which disease the symptoms match the most according to the training data.
