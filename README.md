@@ -26,16 +26,28 @@ The Program was made with matlab Simulink and the matlab App Designer.
 Contains symptoms for a list of diseases. The patient or doctor can choose symptoms out of the provided list and the model outputs which disease the symptoms match the most according to the training data.
 
 Source: 
+https://www.kaggle.com/datasets/itachi9604/disease-symptom-description-dataset?resource=download&select=symptom_precaution.csv
 
-#### Dataset HeartDisease
+#### Dataset Heart Disease
 Using two Datasets with different data categories concerning (risk) factors that could increase risk for heart disease, or factors that indicate the patient has heart disease. The patient or doctor can use the two columns (one for each dataset) to input different datapoints and the models predict whether the patient has heart disease (or a high risk) or not.
 
 Source:
+https://www.kaggle.com/datasets/johnsmith88/heart-disease-dataset
+https://www.kaggle.com/datasets/alexteboul/heart-disease-health-indicators-dataset
+
 
 #### Dataset Diabetes
 Using a Dataset containing different factors that show differences in patients with and without heart disease. The patient or doctor can input values for each category and the program outputs whether the patient most likely has diabetes or not.
 
 Source:
+https://www.kaggle.com/datasets/vikasukani/diabetes-data-set
+https://www.kaggle.com/datasets/jillanisofttech/diabetes-disease-updated-dataset
+
+#### Dataset Lumpy Skin
+TODO
+
+Source:
+https://www.kaggle.com/datasets/saurabhshahane/lumpy-skin-disease-dataset
 
 ## ML Models used
 We used Bagged Trees to predict diseases. More on that further down.
@@ -61,8 +73,13 @@ With Bagging, many datasets are generated out of the original dataset using the 
 
 # GUI
 
-## Thoughts behing UI
-why designed this way
+## Thoughts behind UI
+We decided to separate the app based on the different datasets that were provided and its diseases.
+At first we settled on a tab structure but this led to some unresolvable merge conflicts because of Matlab. So we chose a multi-app system instead: one start-up app to chose which diagnosis tool you want to use, four apps for the different diseases, and one app that will display your results.
 
-## Explain the tabs
-refer to the models here
+## Explanation of apps
+We had to decide which values from the datasets can be used to build this diagnostic tool and make edit fields based on them for the user to fill out.
+For general we could simply use the different symptoms that can then be selected by the user.
+For diabetes, heart disease and lumpy skin we use a mixture of edit fields, drop-downs, checkboxes and spinners based on what would be the most intuitive for the user experience.
+The results will then be forwarded to the prediction app and presented there. 
+It displays the diagnosis, which values can be considered unhealthy, and further information on what precautions to take. There is also a button to save these results and download them as a text file.
