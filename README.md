@@ -40,7 +40,8 @@ The base folder of the program is 'Project' or alternative (but not preferred) '
  !! Note: More details about the program are below or in additional ReadME (linked) files !! 
 
 ## Project Structure
-![Project Structure3](https://github.com/mango-gremlin/Teamprojekt-Diagnosis-System/assets/104830903/e35a202f-5c93-4f6e-afcd-099c3fc67559)
+![Project Structure4](https://github.com/mango-gremlin/Teamprojekt-Diagnosis-System/assets/104830903/8cf89e6b-c148-415b-8cff-9bbc2558d310)
+
 
 ## Diseases and Datasets used
 #### Dataset General
@@ -102,10 +103,12 @@ For each model we calculated accuracies and wrote detailed documentation, which 
 <p float="left">
   <img src="https://github.com/mango-gremlin/Teamprojekt-Diagnosis-System/assets/116217918/c20230c6-ff38-4cac-96bd-36159297d84a" width="49%" />
   <img src="https://github.com/mango-gremlin/Teamprojekt-Diagnosis-System/assets/116217918/870b11c2-7657-47ef-b082-253c345120ad" width="49%" /> 
-</p>
+General, Diabetes</p>
+
 <p float="left">
   <img src="https://github.com/mango-gremlin/Teamprojekt-Diagnosis-System/assets/116217918/f00e4274-a35d-4eef-bd53-424ed7158e3e" width="49%" /> 
   <img src="https://github.com/mango-gremlin/Teamprojekt-Diagnosis-System/assets/116217918/60b81a63-03d8-41cb-88e7-470647f1e7ab" width="49%" />
+Heart Disease, Lumpy Skin
 </p>
 
 
