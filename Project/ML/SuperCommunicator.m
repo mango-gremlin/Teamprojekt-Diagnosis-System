@@ -31,6 +31,7 @@ classdef SuperCommunicator
 
             %healthInfo;
 
+
             % for the unhealthy values add a string containing the info
             % text
 
@@ -72,6 +73,7 @@ classdef SuperCommunicator
             %
             % Arguments:
             % - the input from the GUI as a table
+           
 
             output = strings(width(input), 0);
 
@@ -84,7 +86,7 @@ classdef SuperCommunicator
             outputArg = output;
         end
 
-        function outputArg = printUnhealthyCategories(input, unhealthy)
+        function outputArg = printUnhealthyCategories(input, categories)
             % PRINT UNHEALTHY CATEGORIES returns the input value categories
             % (e.g. blood pressure, insulin levels...) that were
             % categorised as unhealthy as a string array
@@ -94,14 +96,14 @@ classdef SuperCommunicator
             % - unhealthy: a boolean array containing a 1 at position i for unhealthy
             % value at position i and a 0 for healthy
 
-            output = strings(sum(unhealthy, 'all'),0);
+            output = strings(sum(categories, 'all'),0);
 
             values = input.Properties.VariableNames;
 
             textPosition = 1;
 
-            for i = 1:length(unhealthy)
-                if(unhealthy(i)==1)
+            for i = 1:length(categories)
+                if(categories(i)==1)
                     output(textPosition) = values(i);
                     textPosition = textPosition +1;
                 end
