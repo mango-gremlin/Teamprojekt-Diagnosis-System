@@ -99,6 +99,19 @@ For each model we calculated accuracies and wrote detailed documentation, which 
 
 # GUI
 
+<p float="left">
+  <img src="https://github.com/mango-gremlin/Teamprojekt-Diagnosis-System/assets/116217918/c20230c6-ff38-4cac-96bd-36159297d84a" width="49%" />
+  <img src="https://github.com/mango-gremlin/Teamprojekt-Diagnosis-System/assets/116217918/870b11c2-7657-47ef-b082-253c345120ad" width="49%" /> 
+</p>
+<p float="left">
+  <img src="https://github.com/mango-gremlin/Teamprojekt-Diagnosis-System/assets/116217918/f00e4274-a35d-4eef-bd53-424ed7158e3e" width="49%" /> 
+  <img src="https://github.com/mango-gremlin/Teamprojekt-Diagnosis-System/assets/116217918/60b81a63-03d8-41cb-88e7-470647f1e7ab" width="49%" />
+</p>
+
+
+
+
+
 ## Thoughts behind UI
 We decided to separate the app based on the different datasets that were provided and its diseases.
 At first we settled on a tab structure but this led to some unresolvable merge conflicts because of Matlab. So we chose a multi-app system instead: one start-up app to chose which diagnosis tool you want to use, four apps for the different diseases, and one app that will display your results.
